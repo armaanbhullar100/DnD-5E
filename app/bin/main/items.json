@@ -1,0 +1,27 @@
+{
+    "padded": {
+        "weight": 8,
+        "cost": 5.0,
+        "itemType": "Armor",
+        "armorType": "Light",
+        "armorClass": 11,
+        "strengthRequirement": 0,
+        "stealthDisadvantage": "false"
+    },
+    "club": {
+        "weight": 2,
+        "cost": 0.1,
+        "itemType": "Weapon",
+        "weaponType": "Simple Melee",
+        "damage": "1d4 bludgeoning",
+        "properties": [
+            "Light"
+        ]
+    },
+    "acid": {
+        "weight": 1,
+        "cost": 25.0,
+        "itemType": "Adventuring Gear",
+        "description": "As an action, you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged attack against a creature or object, treating the acid as an improvised weapon. On a hit, the target takes 2d6 acid damage."
+    }
+}

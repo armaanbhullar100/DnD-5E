@@ -3,14 +3,26 @@ package item;
 import java.util.ArrayList;
 
 public class Weapon extends Item {
-    String type;
-    WeaponDamage damage;
-    ArrayList<String> properties = new ArrayList<>();
+    private String weaponType;
+    private WeaponDamage damage;
+    private ArrayList<String> properties = new ArrayList<>();
 
-    public Weapon(String name, int weight, Currency cost, String type, WeaponDamage damage, ArrayList<String> properties) {
+    public Weapon(String name, int weight, Currency cost, String weaponType, WeaponDamage damage, ArrayList<String> properties) {
         super(name, weight, cost);
-        this.type = type;
+        this.weaponType = weaponType;
         this.damage = damage;
         this.properties = properties;
+    }
+
+    public String getWeaponType() {
+        return this.weaponType;
+    }
+
+    public WeaponDamage getDamage() {
+        return this.damage;
+    }
+
+    public ArrayList<String> getProperties() {
+        return this.properties;
     }
 }

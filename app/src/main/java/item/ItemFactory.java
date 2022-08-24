@@ -1,7 +1,9 @@
 package item;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -25,40 +27,58 @@ public class ItemFactory {
      * @throws JSONException If the item name is wrong or it doesn't exist
      */
     public Item createItem(String itemName) {
-
+        
         JSONObject newItem;
         try {
-            newItem = new JSONObject(jsonString).getJSONObject(itemName);
+            newItem = new JSONObject(jsonString).getJSONObject(itemName.toLowerCase());
         } catch (Exception e) {
             throw new JSONException("item does not exist");
         } 
+
+        String name = newItem.getString("name");
+        int weight = newItem.getInt("weight");
+        Currency cost = new Currency(newItem.getInt("cost"));
         
         // Create item based on its type
         String itemType = newItem.getString("itemtype");
         if (itemType.equals("Armor")) {
-            return createArmor(newItem);
+            return createArmor(newItem, name, weight, cost);
         } else if (itemType.equals("Weapon")) {
-            return createWeapon(newItem);
+            return createWeapon(newItem, name, weight, cost);
         } else if (itemType.equals("Adventuring Gear")) {
-            return createAdventuringGear(newItem);
+            return createAdventuringGear(newItem, name, weight, cost);
         } else {
-            return createBasicItem(newItem);
+            return new Item(name, weight, cost);
         }
     }
 
-    private Item createBasicItem(JSONObject newItem) {
-        return null;
+    private Armor createArmor(JSONObject armor, String name, int weight, Currency cost) {
+        String armorType = armor.getString("armortype");
+        int armorClass = armor.getInt("armorClass");
+        int strengthRequirement = armor.getInt("strengthRequirement");
+        boolean stealthDisadvantage = armor.getBoolean("stealthDisadvantage");
+
+        return new Armor(name, weight, cost, armorType, armorClass, strengthRequirement, stealthDisadvantage);
     }
 
-    private Armor createArmor(JSONObject armor) {
-        return null;
+    private Weapon createWeapon(JSONObject weapon, String name, int weight, Currency cost) {
+        String weaponType = weapon.getString("weaponType");
+        WeaponDamage damage = new WeaponDamage(weapon.getString("damage"));
+
+        JSONArray jsonArray = weapon.getJSONArray("properties");
+        ArrayList<String> properties = new ArrayList<>();
+        if (jsonArray != null) {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                properties.add(jsonArray.getString(i));
+            }
+        }
+
+        return new Weapon(name, weight, cost, weaponType, damage, properties);
     }
 
-    private Weapon createWeapon(JSONObject weapon) {
-        return null;
-    }
+    private AdventuringGear createAdventuringGear(JSONObject gear, String name, int weight, Currency cost) {
+        String description = gear.getString("description");
 
-    private AdventuringGear createAdventuringGear(JSONObject gear) {
-        return null;
+        return new AdventuringGear(name, weight, cost, description);
     }
 }

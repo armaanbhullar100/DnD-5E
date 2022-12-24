@@ -12,8 +12,10 @@ public class Class {
     private int level;
     private int proficiencyBonus;
     private int hitDice;
+    
     private ArrayList<String> itemProficiencies = new ArrayList<>();
     private ArrayList<String> savingThrowProficiencies = new ArrayList<>();
+    private ArrayList<String> skillProficiencies = new ArrayList<>();
     private HashMap<Item,Integer> equipment = new HashMap<>();
     private ArrayList<Feature> features = new ArrayList<>();
     private Subclass subclass;
@@ -49,6 +51,10 @@ public class Class {
     public ArrayList<String> getSavingThrowProficiencies() {
         return savingThrowProficiencies;
     }
+    
+    public ArrayList<String> getSkillProficiencies() {
+        return skillProficiencies;
+    }
 
     public HashMap<Item, Integer> getEquipment() {
         return equipment;
@@ -61,6 +67,11 @@ public class Class {
     public Subclass getSubclass() {
         return subclass;
     }
+
+    public int getProficiencyBonus() {
+        return proficiencyBonus;
+    }
+
 
     
 }

@@ -7,13 +7,13 @@ import character.*;
 import classes.classList.subclasses.Subclass;
 import item.*;
 
-public abstract class Class {
+public class Class {
     private String name;
     private int level;
+    private int proficiencyBonus;
     private int hitDice;
     private ArrayList<String> itemProficiencies = new ArrayList<>();
     private ArrayList<String> savingThrowProficiencies = new ArrayList<>();
-    private ArrayList<String> skillProficiencies = new ArrayList<>();
     private HashMap<Item,Integer> equipment = new HashMap<>();
     private ArrayList<Feature> features = new ArrayList<>();
     private Subclass subclass;
@@ -48,10 +48,6 @@ public abstract class Class {
 
     public ArrayList<String> getSavingThrowProficiencies() {
         return savingThrowProficiencies;
-    }
-
-    public ArrayList<String> getSkillProficiencies() {
-        return skillProficiencies;
     }
 
     public HashMap<Item, Integer> getEquipment() {

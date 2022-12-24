@@ -10,7 +10,7 @@ public class SpellBook {
     private String spellcastingAbility;
     private int spellSaveDC;
     private int spellAttackBonus;
-
+    
     private ArrayList<Spell> cantrips = new ArrayList<>();
     private ArrayList<Spell> firstLevel = new ArrayList<>();
     private ArrayList<Spell> secondLevel = new ArrayList<>();
@@ -22,65 +22,79 @@ public class SpellBook {
     private ArrayList<Spell> eightLevel = new ArrayList<>();
     private ArrayList<Spell> ninthLevel = new ArrayList<>();
 
-    public SpellBook() {
-
+    public SpellBook(Class spellcastingClass, String spellcastingAbility, int spellSaveDC, int spellAttackBonus, ArrayList<Spell> cantrips, ArrayList<Spell> firstLevel, ArrayList<Spell> secondLevel, ArrayList<Spell> thirdLevel, ArrayList<Spell> fourthLevel, ArrayList<Spell> fifthLevel, ArrayList<Spell> sixthLevel, ArrayList<Spell> seventhLevel, ArrayList<Spell> eightLevel, ArrayList<Spell> ninthLevel) {
+        this.spellcastingClass = spellcastingClass;
+        this.spellcastingAbility = spellcastingAbility;
+        this.spellSaveDC = spellSaveDC;
+        this.spellAttackBonus = spellAttackBonus;
+        this.cantrips = cantrips;
+        this.firstLevel = firstLevel;
+        this.secondLevel = secondLevel;
+        this.thirdLevel = thirdLevel;
+        this.fourthLevel = fourthLevel;
+        this.fifthLevel = fifthLevel;
+        this.sixthLevel = sixthLevel;
+        this.seventhLevel = seventhLevel;
+        this.eightLevel = eightLevel;
+        this.ninthLevel = ninthLevel;
     }
 
     public Class getSpellcastingClass() {
-        return this.spellcastingClass;
+        return spellcastingClass;
     }
 
     public String getSpellcastingAbility() {
-        return this.spellcastingAbility;
+        return spellcastingAbility;
     }
 
     public int getSpellSaveDC() {
-        return this.spellSaveDC;
+        return spellSaveDC;
     }
 
     public int getSpellAttackBonus() {
-        return this.spellAttackBonus;
+        return spellAttackBonus;
     }
 
     public ArrayList<Spell> getCantrips() {
-        return this.cantrips;
+        return cantrips;
     }
 
     public ArrayList<Spell> getFirstLevel() {
-        return this.firstLevel;
+        return firstLevel;
     }
 
     public ArrayList<Spell> getSecondLevel() {
-        return this.secondLevel;
+        return secondLevel;
     }
 
     public ArrayList<Spell> getThirdLevel() {
-        return this.thirdLevel;
+        return thirdLevel;
     }
 
     public ArrayList<Spell> getFourthLevel() {
-        return this.fourthLevel;
+        return fourthLevel;
     }
 
     public ArrayList<Spell> getFifthLevel() {
-        return this.fifthLevel;
+        return fifthLevel;
     }
 
     public ArrayList<Spell> getSixthLevel() {
-        return this.sixthLevel;
+        return sixthLevel;
     }
 
     public ArrayList<Spell> getSeventhLevel() {
-        return this.seventhLevel;
+        return seventhLevel;
     }
 
     public ArrayList<Spell> getEightLevel() {
-        return this.eightLevel;
+        return eightLevel;
     }
 
     public ArrayList<Spell> getNinthLevel() {
-        return this.ninthLevel;
+        return ninthLevel;
     }
 
+    
     
 }

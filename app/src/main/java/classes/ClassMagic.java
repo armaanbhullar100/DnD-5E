@@ -7,28 +7,32 @@ public class ClassMagic {
     private String magicType;
     private int numSpellsKnown;
 
-    public ClassMagic() {
-
+    public ClassMagic(int spellSaveDC, int spellAttackModifier, SpellSlots spellSlots, String magicType, int numSpellsKnown) {
+        this.spellSaveDC = spellSaveDC;
+        this.spellAttackModifier = spellAttackModifier;
+        this.spellSlots = spellSlots;
+        this.magicType = magicType;
+        this.numSpellsKnown = numSpellsKnown;
     }
 
     public int getSpellSaveDC() {
-        return this.spellSaveDC;
+        return spellSaveDC;
     }
 
     public int getSpellAttackModifier() {
-        return this.spellAttackModifier;
+        return spellAttackModifier;
     }
 
     public SpellSlots getSpellSlots() {
-        return this.spellSlots;
+        return spellSlots;
     }
 
     public String getMagicType() {
-        return this.magicType;
+        return magicType;
     }
 
     public int getNumSpellsKnown() {
-        return this.numSpellsKnown;
+        return numSpellsKnown;
     }
 
     

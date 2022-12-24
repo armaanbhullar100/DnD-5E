@@ -17,55 +17,64 @@ public class CharacterDescription {
     private String backstory;
     private String extraFeatures;
     private ArrayList<Item> treasure = new ArrayList<>();
-    
-    public CharacterDescription() {
 
+    public CharacterDescription(int age, int height, int weight, String eyes, String skin, String hair, String size, String alliesAndOrganisations, String backstory, String extraFeatures, ArrayList<Item> treasure) {
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+        this.eyes = eyes;
+        this.skin = skin;
+        this.hair = hair;
+        this.size = size;
+
+        this.alliesAndOrganisations = alliesAndOrganisations;
+        this.backstory = backstory;
+        this.extraFeatures = extraFeatures;
+        this.treasure = treasure;
     }
 
     public int getAge() {
-        return this.age;
+        return age;
     }
 
     public int getHeight() {
-        return this.height;
+        return height;
     }
 
     public int getWeight() {
-        return this.weight;
+        return weight;
     }
 
     public String getEyes() {
-        return this.eyes;
+        return eyes;
     }
 
     public String getSkin() {
-        return this.skin;
+        return skin;
     }
 
     public String getHair() {
-        return this.hair;
+        return hair;
     }
 
     public String getSize() {
-        return this.size;
+        return size;
     }
 
     public String getAlliesAndOrganisations() {
-        return this.alliesAndOrganisations;
+        return alliesAndOrganisations;
     }
 
     public String getBackstory() {
-        return this.backstory;
+        return backstory;
     }
 
     public String getExtraFeatures() {
-        return this.extraFeatures;
+        return extraFeatures;
     }
 
     public ArrayList<Item> getTreasure() {
-        return this.treasure;
+        return treasure;
     }
-
-    
     
 }

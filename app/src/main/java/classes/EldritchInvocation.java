@@ -7,28 +7,32 @@ public class EldritchInvocation {
     private String prerequisitePactBoon;
     private Spell prerequisiteSpell;
 
-    public EldritchInvocation() {
-
+    public EldritchInvocation(String name, String effect, int prerequisiteLevel, String prerequisitePactBoon, Spell prerequisiteSpell) {
+        this.name = name;
+        this.effect = effect;
+        this.prerequisiteLevel = prerequisiteLevel;
+        this.prerequisitePactBoon = prerequisitePactBoon;
+        this.prerequisiteSpell = prerequisiteSpell;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getEffect() {
-        return this.effect;
+        return effect;
     }
 
     public int getPrerequisiteLevel() {
-        return this.prerequisiteLevel;
+        return prerequisiteLevel;
     }
 
     public String getPrerequisitePactBoon() {
-        return this.prerequisitePactBoon;
+        return prerequisitePactBoon;
     }
 
     public Spell getPrerequisiteSpell() {
-        return this.prerequisiteSpell;
+        return prerequisiteSpell;
     }
 
     

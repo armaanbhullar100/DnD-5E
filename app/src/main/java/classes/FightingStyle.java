@@ -3,16 +3,19 @@ package classes;
 public class FightingStyle {
     private String name;
     private String description;
-
-    public FightingStyle() {
-
+    
+    public FightingStyle(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
-    
+
     public String getDescription() {
-        return this.description;
+        return description;
     }
+
+    
 }

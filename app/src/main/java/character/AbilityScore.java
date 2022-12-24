@@ -1,23 +1,20 @@
 package character;
 
 public class AbilityScore {
-    private String name;
     private int value;
     private int modifier;
 
-    public AbilityScore() {
-
-    }
-
-    public String getName() {
-        return this.name;
+    public AbilityScore(int value) {
+        this.value = value;
+        this.modifier = Math.floorDiv((value - 10),2);
     }
 
     public int getValue() {
-        return this.value;
+        return value;
     }
 
     public int getModifier() {
-        return this.modifier;
+        return modifier;
     }
+
 }

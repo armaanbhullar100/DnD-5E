@@ -6,7 +6,7 @@ public class Armor extends Item {
     private int strengthRequirement;
     private boolean stealthDisadvantage;
 
-    public Armor(String name, int weight, Currency cost, String armorType, int armorClass, int strengthRequirement, boolean stealthDisadvantage) {
+    public Armor(String name, Double weight, Currency cost, String armorType, int armorClass, int strengthRequirement, boolean stealthDisadvantage) {
         super(name, weight, cost);
         this.armorType = armorType;
         this.armorClass = armorClass;

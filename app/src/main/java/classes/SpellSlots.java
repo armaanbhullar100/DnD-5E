@@ -11,44 +11,52 @@ public class SpellSlots {
     private int eightLevel;
     private int ninthLevel;
 
-    public SpellSlots() {
-
+    public SpellSlots(int firstLevel, int secondLevel, int thirdLevel, int fourthLevel, int fifthLevel, int sixthLevel, int seventhLevel, int eightLevel, int ninthLevel) {
+        this.firstLevel = firstLevel;
+        this.secondLevel = secondLevel;
+        this.thirdLevel = thirdLevel;
+        this.fourthLevel = fourthLevel;
+        this.fifthLevel = fifthLevel;
+        this.sixthLevel = sixthLevel;
+        this.seventhLevel = seventhLevel;
+        this.eightLevel = eightLevel;
+        this.ninthLevel = ninthLevel;
     }
 
     public int getFirstLevel() {
-        return this.firstLevel;
+        return firstLevel;
     }
 
     public int getSecondLevel() {
-        return this.secondLevel;
+        return secondLevel;
     }
 
     public int getThirdLevel() {
-        return this.thirdLevel;
+        return thirdLevel;
     }
 
     public int getFourthLevel() {
-        return this.fourthLevel;
+        return fourthLevel;
     }
 
     public int getFifthLevel() {
-        return this.fifthLevel;
+        return fifthLevel;
     }
 
     public int getSixthLevel() {
-        return this.sixthLevel;
+        return sixthLevel;
     }
 
     public int getSeventhLevel() {
-        return this.seventhLevel;
+        return seventhLevel;
     }
 
     public int getEightLevel() {
-        return this.eightLevel;
+        return eightLevel;
     }
 
     public int getNinthLevel() {
-        return this.ninthLevel;
+        return ninthLevel;
     }
 
     

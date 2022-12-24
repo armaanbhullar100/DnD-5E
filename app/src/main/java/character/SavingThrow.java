@@ -1,10 +1,10 @@
 package character;
 
-public class Skill {
+public class SavingThrow {
     private boolean proficient;
     private int value;
 
-    public Skill(boolean proficient, int value) {
+    public SavingThrow(boolean proficient, int value) {
         this.proficient = proficient;
         this.value = value;
     }

@@ -12,40 +12,47 @@ public class Race {
     private ArrayList<String> languages = new ArrayList<>();
     private String subrace;
 
-    public Race() {
-
+    public Race(String name, ArrayList<AbilityScore> abilityScoreIncrease, int age, String size, int speed, ArrayList<Feature> traits, ArrayList<String> languages, String subrace) {
+        this.name = name;
+        this.abilityScoreIncreases = abilityScoreIncrease;
+        this.age = age;
+        this.size = size;
+        this.speed = speed;
+        this.traits = traits;
+        this.languages = languages;
+        this.subrace = subrace;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public ArrayList<AbilityScore> getAbilityScoreIncreases() {
-        return this.abilityScoreIncreases;
+        return abilityScoreIncreases;
     }
 
     public int getAge() {
-        return this.age;
+        return age;
     }
 
     public String getSize() {
-        return this.size;
+        return size;
     }
 
     public int getSpeed() {
-        return this.speed;
+        return speed;
     }
 
     public ArrayList<Feature> getTraits() {
-        return this.traits;
+        return traits;
     }
 
     public ArrayList<String> getLanguages() {
-        return this.languages;
+        return languages;
     }
 
     public String getSubrace() {
-        return this.subrace;
+        return subrace;
     }
 
     

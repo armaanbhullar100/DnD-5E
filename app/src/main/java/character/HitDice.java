@@ -5,19 +5,29 @@ public class HitDice {
     private int currAmount;
     private int maxAmount;
 
-    public HitDice() {
-
+    public HitDice(int diceNumber) {
+        this.diceNumber = diceNumber;
+        this.currAmount = 1;
+        this.maxAmount = 1;
     }
 
     public int getDiceNumber() {
-        return this.diceNumber;
+        return diceNumber;
     }
 
     public int getCurrAmount() {
-        return this.currAmount;
+        return currAmount;
     }
 
     public int getMaxAmount() {
-        return this.maxAmount;
+        return maxAmount;
+    }
+
+    public void setMaxAmount(int maxAmount) {
+        this.maxAmount = maxAmount;
+    }
+
+    public void setCurrAmount(int currAmount) {
+        this.currAmount = currAmount;
     }
 }

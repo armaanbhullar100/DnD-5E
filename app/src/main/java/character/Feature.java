@@ -6,24 +6,28 @@ public class Feature {
     private String source;
     private int level;
 
-    public Feature() {
-
+    public Feature(String name, String description, String source, int level) {
+        this.name = name;
+        this.description = description;
+        this.source = source;
+        this.level = level;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     public String getSource() {
-        return this.source;
+        return source;
     }
 
     public int getLevel() {
-        return this.level;
+        return level;
     }
 
+    
 }

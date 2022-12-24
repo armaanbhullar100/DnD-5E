@@ -7,33 +7,38 @@ public class Spell {
     private String components;
     private String duration;
     private String description;
-
-    public Spell() {
-
+    
+    public Spell(String name, String castingTime, int range, String components, String duration, String description) {
+        this.name = name;
+        this.castingTime = castingTime;
+        this.range = range;
+        this.components = components;
+        this.duration = duration;
+        this.description = description;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getCastingTime() {
-        return this.castingTime;
+        return castingTime;
     }
 
     public int getRange() {
-        return this.range;
+        return range;
     }
 
     public String getComponents() {
-        return this.components;
+        return components;
     }
 
     public String getDuration() {
-        return this.duration;
+        return duration;
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     

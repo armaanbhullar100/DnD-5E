@@ -12,51 +12,66 @@ public class Class {
     private int level;
     private int proficiencyBonus;
     private int hitDice;
-    private ArrayList<Item> itemProficiencies = new ArrayList<>();
-    private ArrayList<Skill> savingThrowProficiencies = new ArrayList<>();
+    
+    private ArrayList<String> itemProficiencies = new ArrayList<>();
+    private ArrayList<String> savingThrowProficiencies = new ArrayList<>();
+    private ArrayList<String> skillProficiencies = new ArrayList<>();
     private HashMap<Item,Integer> equipment = new HashMap<>();
     private ArrayList<Feature> features = new ArrayList<>();
     private Subclass subclass;
 
-    public Class() {
-
+    public Class(String name, int hitDice, ArrayList<String> itemProficiencies, ArrayList<String> savingThrowProficiencies, 
+            ArrayList<String> skillProficiencies, HashMap<Item,Integer> equipment, ArrayList<Feature> features, Subclass subclass) {
+        this.name = name;
+        this.level = 1;
+        this.hitDice = hitDice;
+        this.itemProficiencies = itemProficiencies;
+        this.savingThrowProficiencies = savingThrowProficiencies;
+        this.equipment = equipment;
+        this.features = features;
+        this.subclass = subclass;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public int getLevel() {
-        return this.level;
-    }
-
-    public int getProficiencyBonus() {
-        return this.proficiencyBonus;
+        return level;
     }
 
     public int getHitDice() {
-        return this.hitDice;
+        return hitDice;
     }
 
-    public ArrayList<Item> getItemProficiencies() {
-        return this.itemProficiencies;
+    public ArrayList<String> getItemProficiencies() {
+        return itemProficiencies;
     }
 
-    public ArrayList<Skill> getSavingThrowProficiencies() {
-        return this.savingThrowProficiencies;
+    public ArrayList<String> getSavingThrowProficiencies() {
+        return savingThrowProficiencies;
+    }
+    
+    public ArrayList<String> getSkillProficiencies() {
+        return skillProficiencies;
     }
 
     public HashMap<Item, Integer> getEquipment() {
-        return this.equipment;
+        return equipment;
     }
 
     public ArrayList<Feature> getFeatures() {
-        return this.features;
+        return features;
     }
 
     public Subclass getSubclass() {
-        return this.subclass;
+        return subclass;
     }
+
+    public int getProficiencyBonus() {
+        return proficiencyBonus;
+    }
+
 
     
 }

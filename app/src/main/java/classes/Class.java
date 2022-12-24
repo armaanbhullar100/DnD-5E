@@ -7,14 +7,64 @@ import character.*;
 import classes.classList.subclasses.Subclass;
 import item.*;
 
-public class Class {
-    String name;
-    int level;
-    int proficiencyBonus;
-    int hitDice;
-    ArrayList<Item> itemProficiencies = new ArrayList<>();
-    ArrayList<SavingThrow> savingThrowProficiencies = new ArrayList<>();
-    HashMap<Item,Integer> equipment = new HashMap<>();
-    ArrayList<Feature> features = new ArrayList<>();
-    Subclass subclass;
+public abstract class Class {
+    private String name;
+    private int level;
+    private int hitDice;
+    private ArrayList<String> itemProficiencies = new ArrayList<>();
+    private ArrayList<String> savingThrowProficiencies = new ArrayList<>();
+    private ArrayList<String> skillProficiencies = new ArrayList<>();
+    private HashMap<Item,Integer> equipment = new HashMap<>();
+    private ArrayList<Feature> features = new ArrayList<>();
+    private Subclass subclass;
+
+    public Class(String name, int hitDice, ArrayList<String> itemProficiencies, ArrayList<String> savingThrowProficiencies, 
+            ArrayList<String> skillProficiencies, HashMap<Item,Integer> equipment, ArrayList<Feature> features, Subclass subclass) {
+        this.name = name;
+        this.level = 1;
+        this.hitDice = hitDice;
+        this.itemProficiencies = itemProficiencies;
+        this.savingThrowProficiencies = savingThrowProficiencies;
+        this.equipment = equipment;
+        this.features = features;
+        this.subclass = subclass;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getHitDice() {
+        return hitDice;
+    }
+
+    public ArrayList<String> getItemProficiencies() {
+        return itemProficiencies;
+    }
+
+    public ArrayList<String> getSavingThrowProficiencies() {
+        return savingThrowProficiencies;
+    }
+
+    public ArrayList<String> getSkillProficiencies() {
+        return skillProficiencies;
+    }
+
+    public HashMap<Item, Integer> getEquipment() {
+        return equipment;
+    }
+
+    public ArrayList<Feature> getFeatures() {
+        return features;
+    }
+
+    public Subclass getSubclass() {
+        return subclass;
+    }
+
+    
 }

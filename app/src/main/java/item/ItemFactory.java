@@ -2,6 +2,7 @@ package item;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,11 +33,12 @@ public class ItemFactory {
         try {
             newItem = new JSONObject(jsonString).getJSONObject(itemName.toLowerCase());
         } catch (Exception e) {
-            throw new JSONException("item does not exist");
+            // If item cannot be found, return basic info
+            return new Item(itemName, 0.0, new Currency(0));
         } 
 
         String name = newItem.getString("name");
-        int weight = newItem.getInt("weight");
+        Double weight = newItem.getDouble("weight");
         Currency cost = new Currency(newItem.getInt("cost"));
         
         // Create item based on its type
@@ -47,12 +49,18 @@ public class ItemFactory {
             return createWeapon(newItem, name, weight, cost);
         } else if (itemType.equals("Adventuring Gear")) {
             return createAdventuringGear(newItem, name, weight, cost);
+        } else if (itemType.equals("Ammunition")) {
+            return createAmmunition(newItem, name, weight, cost);
+        } else if (itemType.equals("Equipment Pack")) {
+            return creatEquipmentPack(newItem, name, weight, cost);
+        } else if (itemType.equals("Mount")) {
+            return createMount(newItem, name, weight, cost);
         } else {
             return new Item(name, weight, cost);
         }
     }
 
-    private Armor createArmor(JSONObject armor, String name, int weight, Currency cost) {
+    private Armor createArmor(JSONObject armor, String name, Double weight, Currency cost) {
         String armorType = armor.getString("armortype");
         int armorClass = armor.getInt("armorClass");
         int strengthRequirement = armor.getInt("strengthRequirement");
@@ -61,7 +69,7 @@ public class ItemFactory {
         return new Armor(name, weight, cost, armorType, armorClass, strengthRequirement, stealthDisadvantage);
     }
 
-    private Weapon createWeapon(JSONObject weapon, String name, int weight, Currency cost) {
+    private Weapon createWeapon(JSONObject weapon, String name, Double weight, Currency cost) {
         String weaponType = weapon.getString("weaponType");
         WeaponDamage damage = new WeaponDamage(weapon.getString("damage"));
 
@@ -76,9 +84,38 @@ public class ItemFactory {
         return new Weapon(name, weight, cost, weaponType, damage, properties);
     }
 
-    private AdventuringGear createAdventuringGear(JSONObject gear, String name, int weight, Currency cost) {
+    private AdventuringGear createAdventuringGear(JSONObject gear, String name, Double weight, Currency cost) {
         String description = gear.getString("description");
 
         return new AdventuringGear(name, weight, cost, description);
+    }
+
+    private Ammunition createAmmunition(JSONObject ammo, String name, Double weight, Currency cost) {
+        int amount = ammo.getInt("amount");
+
+        return new Ammunition(name, weight, cost, amount);
+    }
+
+    private EquipmentPack creatEquipmentPack(JSONObject pack, String name, Double weight, Currency cost) {
+        JSONObject jsonItems = pack.getJSONObject("items");
+        Iterator<String> iteratorItems = jsonItems.keys();
+        ArrayList<Item> items = new ArrayList<>();
+        
+        while (iteratorItems.hasNext()) {
+            String itemName = iteratorItems.next();
+            int num = jsonItems.getInt(itemName);
+            for (int i = 0; i < num; i++) {
+                items.add(createItem(itemName));
+            }
+        }
+
+        return new EquipmentPack(name, weight, cost, items);
+    }
+
+    private Mount createMount(JSONObject mount, String name, Double weight, Currency cost) {
+        int speed = mount.getInt("speed");
+        int carryingCapacity = mount.getInt("carryingCapacity");
+
+        return new Mount(name, weight, cost, speed, carryingCapacity);
     }
 }

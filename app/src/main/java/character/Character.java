@@ -1,6 +1,7 @@
 package character;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import classes.Class;
 import item.Currency;
@@ -15,26 +16,100 @@ public class Character {
     private Background background;
     private String alignment;
     private int expPoints;
-    private CharacterSpecs characterSpecs;
+    
+    private HashMap<String, AbilityScore> abilityScores = new HashMap<>();
+    private HashMap<String, SavingThrow> savingThrows = new HashMap<>();
+    private HashMap<String, Skill> skills = new HashMap<>();
+
+    private int proficiencyBonus;
+    private int passivePerception;
 
     private int currHitPoints;
     private int maxHitPoints;
     private int tempHitPoints;
     private HitDice hitDice;
     private int armorClass;
-    private boolean initiative;
+    private int initiative;
+    private boolean inspiration;
 
     private String personalityTraits;
     private String ideals;
     private String bonds;
     private String flaws;
 
-    ArrayList<String> languages = new ArrayList<>();
-    ArrayList<String> proficiencies = new ArrayList<>(); 
-    ArrayList<String> equipment = new ArrayList<>();
-    Currency wealth;
-    ArrayList<Feature> features = new ArrayList<>();
-    ArrayList<Weapon> attacks = new ArrayList<>();
-    SpellBook spells;
-    CharacterDescription description;
+    private ArrayList<String> languages = new ArrayList<>();
+    private ArrayList<String> proficiencies = new ArrayList<>(); 
+    private ArrayList<String> equipment = new ArrayList<>();
+    private Currency wealth;
+    private ArrayList<Feature> features = new ArrayList<>();
+    private ArrayList<Weapon> attacks = new ArrayList<>();
+    private SpellBook spells;
+    private CharacterDescription description;
+
+    public Character(String characterName, String playerName, Class characterClass, Race race, Background background, String alignment, ArrayList<Integer> abilityScoresArray) {
+        this.characterName = characterName;
+        this.playerName = playerName;
+        this.characterClass = characterClass;
+        this.race = race;
+        this.background = background;
+        this.alignment = alignment;
+        this.level = 1;
+        this.expPoints = 0;
+
+        abilityScores.put("strength", new AbilityScore(abilityScoresArray.get(0)));
+        abilityScores.put("dexerity", new AbilityScore(abilityScoresArray.get(1)));
+        abilityScores.put("constitution", new AbilityScore(abilityScoresArray.get(2)));
+        abilityScores.put("intelligence", new AbilityScore(abilityScoresArray.get(3)));
+        abilityScores.put("wisdom", new AbilityScore(abilityScoresArray.get(4)));
+        abilityScores.put("charisma", new AbilityScore(abilityScoresArray.get(5)));
+
+        savingThrows.put("strength", new SavingThrow(false, abilityScores.get("strength").getModifier()));
+        savingThrows.put("dexerity", new SavingThrow(false, abilityScores.get("dexerity").getModifier()));
+        savingThrows.put("constitution", new SavingThrow(false, abilityScores.get("constitution").getModifier()));
+        savingThrows.put("intelligence", new SavingThrow(false, abilityScores.get("intelligence").getModifier()));
+        savingThrows.put("wisdom", new SavingThrow(false, abilityScores.get("wisdom").getModifier()));
+        savingThrows.put("charisma", new SavingThrow(false, abilityScores.get("charisma").getModifier()));
+
+        ArrayList<String> stp = characterClass.getSavingThrowProficiencies();
+        for (int i = 0; i < stp.size(); i++) {
+            savingThrows.get(stp.get(i)).setProficient(true);
+        }
+
+        skills.put("Acrobatics", new Skill(false, abilityScores.get("dexerity").getModifier()));
+        skills.put("Animal Handling", new Skill(false, abilityScores.get("wisdom").getModifier()));
+        skills.put("Arcana", new Skill(false, abilityScores.get("intelligence").getModifier()));
+        skills.put("Athletics", new Skill(false, abilityScores.get("strength").getModifier()));
+        skills.put("Deception", new Skill(false, abilityScores.get("charisma").getModifier()));
+        skills.put("History", new Skill(false, abilityScores.get("intelligence").getModifier()));
+        skills.put("Insight", new Skill(false, abilityScores.get("wisdom").getModifier()));
+        skills.put("Intimidation", new Skill(false, abilityScores.get("charisma").getModifier()));
+        skills.put("Investigation", new Skill(false, abilityScores.get("intelligence").getModifier()));
+        skills.put("Medicine", new Skill(false, abilityScores.get("wisdom").getModifier()));
+        skills.put("Nature", new Skill(false, abilityScores.get("intelligence").getModifier()));
+        skills.put("Perception", new Skill(false, abilityScores.get("wisdom").getModifier()));
+        skills.put("Performance", new Skill(false, abilityScores.get("charisma").getModifier()));
+        skills.put("Persuasion", new Skill(false, abilityScores.get("charisma").getModifier()));
+        skills.put("Religion", new Skill(false, abilityScores.get("intelligence").getModifier()));
+        skills.put("Sleight of Hand", new Skill(false, abilityScores.get("dexerity").getModifier()));
+        skills.put("Stealth", new Skill(false, abilityScores.get("dexerity").getModifier()));
+        skills.put("Survival", new Skill(false, abilityScores.get("wisdom").getModifier()));
+
+        ArrayList<String> spb = background.getSkillProficiencies();
+        ArrayList<String> spc = characterClass.getSkillProficiencies();
+        for (int i = 0; i < spb.size(); i++) {
+            skills.get(spb.get(i)).setProficient(true);
+        }
+        for (int i = 0; i < spc.size(); i++) {
+            skills.get(spc.get(i)).setProficient(true);
+        }
+
+        this.proficiencyBonus = 2;
+        this.maxHitPoints = characterClass.getHitDice() + abilityScores.get("constitution").getModifier();
+        this.currHitPoints = maxHitPoints;
+        this.tempHitPoints = 0;
+        this.hitDice = new HitDice(characterClass.getHitDice());
+        this.armorClass = 0;
+        this.initiative = abilityScores.get("dexerity").getModifier();
+        this.inspiration = false;
+    }
 }

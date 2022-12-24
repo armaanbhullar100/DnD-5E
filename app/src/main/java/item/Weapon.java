@@ -7,7 +7,7 @@ public class Weapon extends Item {
     private WeaponDamage damage;
     private ArrayList<String> properties = new ArrayList<>();
 
-    public Weapon(String name, int weight, Currency cost, String weaponType, WeaponDamage damage, ArrayList<String> properties) {
+    public Weapon(String name, Double weight, Currency cost, String weaponType, WeaponDamage damage, ArrayList<String> properties) {
         super(name, weight, cost);
         this.weaponType = weaponType;
         this.damage = damage;

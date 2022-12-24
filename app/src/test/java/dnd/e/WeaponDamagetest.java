@@ -1,8 +1,12 @@
 package dnd.e;
 
 import org.junit.jupiter.api.Test;
+
+import character.Skill;
+
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
 
 import item.WeaponDamage;
 
@@ -13,5 +17,13 @@ public class WeaponDamagetest {
         assertEquals(4, damage.getHitDice());
         assertEquals(1, damage.getNumDice());
         assertEquals("bludgeoning", damage.getDamageType());
+    }
+
+    @Test
+    public void other() {
+        Skill s = new Skill(true, 12);
+        ArrayList<String> skills = new ArrayList<>();
+        skills.add("Acrobatics");
+        System.out.println(skills.get(0));
     }
 }

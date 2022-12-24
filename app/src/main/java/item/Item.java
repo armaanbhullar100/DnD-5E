@@ -2,10 +2,10 @@ package item;
 
 public class Item {
     private String name;
-    private int weight;
+    private Double weight;
     private Currency cost;
 
-    public Item(String name, int weight, Currency cost) {
+    public Item(String name, Double weight, Currency cost) {
         this.name = name;
         this.weight = weight;
         this.cost = cost;
@@ -15,7 +15,7 @@ public class Item {
         return this.name;
     }
 
-    public int getWeight() {
+    public Double getWeight() {
         return this.weight;
     }
 

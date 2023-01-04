@@ -112,4 +112,134 @@ public class Character {
         this.initiative = abilityScores.get("dexerity").getModifier();
         this.inspiration = false;
     }
+
+    public String getCharacterName() {
+        return characterName;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public Class getCharacterClass() {
+        return characterClass;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public Race getRace() {
+        return race;
+    }
+
+    public Background getBackground() {
+        return background;
+    }
+
+    public String getAlignment() {
+        return alignment;
+    }
+
+    public int getExpPoints() {
+        return expPoints;
+    }
+
+    public HashMap<String, AbilityScore> getAbilityScores() {
+        return abilityScores;
+    }
+
+    public HashMap<String, SavingThrow> getSavingThrows() {
+        return savingThrows;
+    }
+
+    public HashMap<String, Skill> getSkills() {
+        return skills;
+    }
+
+    public int getProficiencyBonus() {
+        return proficiencyBonus;
+    }
+
+    public int getPassivePerception() {
+        return passivePerception;
+    }
+
+    public int getCurrHitPoints() {
+        return currHitPoints;
+    }
+
+    public int getMaxHitPoints() {
+        return maxHitPoints;
+    }
+
+    public int getTempHitPoints() {
+        return tempHitPoints;
+    }
+
+    public HitDice getHitDice() {
+        return hitDice;
+    }
+
+    public int getArmorClass() {
+        return armorClass;
+    }
+
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public boolean isInspiration() {
+        return inspiration;
+    }
+
+    public String getPersonalityTraits() {
+        return personalityTraits;
+    }
+
+    public String getIdeals() {
+        return ideals;
+    }
+
+    public String getBonds() {
+        return bonds;
+    }
+
+    public String getFlaws() {
+        return flaws;
+    }
+
+    public ArrayList<String> getLanguages() {
+        return languages;
+    }
+
+    public ArrayList<String> getProficiencies() {
+        return proficiencies;
+    }
+
+    public ArrayList<String> getEquipment() {
+        return equipment;
+    }
+
+    public Currency getWealth() {
+        return wealth;
+    }
+
+    public ArrayList<Feature> getFeatures() {
+        return features;
+    }
+
+    public ArrayList<Weapon> getAttacks() {
+        return attacks;
+    }
+
+    public SpellBook getSpells() {
+        return spells;
+    }
+
+    public CharacterDescription getDescription() {
+        return description;
+    }
+
+    
 }

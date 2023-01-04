@@ -2,7 +2,7 @@ package classes;
 
 import java.io.IOException;
 
-import org.json.JSONObject;
+// import org.json.JSONObject;
 
 import classes.classList.*;
 import util.FileLoader;
@@ -19,13 +19,13 @@ public class ClassFactory {
     }
 
     public Class createClass(String classType) {
-        JSONObject newItem;
-        try {
-            newItem = new JSONObject(jsonString).getJSONObject(classType.toLowerCase());
-        } catch (Exception e) {
-            // If class cannot be found, return error
-            return null;
-        } 
+        // JSONObject newItem;
+        // try {
+        //     newItem = new JSONObject(jsonString).getJSONObject(classType.toLowerCase());
+        // } catch (Exception e) {
+        //     // If class cannot be found, return error
+        //     return null;
+        // }
 
         if (classType.equals("Barbarian")) {
             return new Barbarian(classType, 0, null, null, null, null, null, null);

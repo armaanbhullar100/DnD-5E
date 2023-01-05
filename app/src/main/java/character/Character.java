@@ -42,7 +42,7 @@ public class Character {
     private ArrayList<String> equipment = new ArrayList<>();
     private Currency wealth;
     private ArrayList<Feature> features = new ArrayList<>();
-    private ArrayList<Weapon> attacks = new ArrayList<>();
+    private ArrayList<Weapon> weapons = new ArrayList<>();
     private SpellBook spells;
     private CharacterDescription description;
 
@@ -229,8 +229,8 @@ public class Character {
         return features;
     }
 
-    public ArrayList<Weapon> getAttacks() {
-        return attacks;
+    public ArrayList<Weapon> getWeapons() {
+        return weapons;
     }
 
     public SpellBook getSpells() {

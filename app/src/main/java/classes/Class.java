@@ -5,9 +5,10 @@ import java.util.HashMap;
 
 import character.*;
 import classes.classList.subclasses.Subclass;
+import classes.classMethodsInterfaces.BarbarianInterface;
 import item.*;
 
-public class Class {
+public class Class implements BarbarianInterface {
     private String name;
     private int level;
     private int proficiencyBonus;
@@ -19,9 +20,10 @@ public class Class {
     private HashMap<Item,Integer> equipment = new HashMap<>();
     private ArrayList<Feature> features = new ArrayList<>();
     private Subclass subclass;
+    private HashMap<String, Object> otherClassValues = new HashMap<>();
 
     public Class(String name, int hitDice, ArrayList<String> itemProficiencies, ArrayList<String> savingThrowProficiencies, 
-            ArrayList<String> skillProficiencies, HashMap<Item,Integer> equipment, ArrayList<Feature> features, Subclass subclass) {
+            ArrayList<String> skillProficiencies, HashMap<Item,Integer> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String, Object> otherClassValues) {
         this.name = name;
         this.level = 1;
         this.hitDice = hitDice;
@@ -30,6 +32,7 @@ public class Class {
         this.equipment = equipment;
         this.features = features;
         this.subclass = subclass;
+        this.otherClassValues = otherClassValues;
     }
 
     public String getName() {
@@ -72,6 +75,8 @@ public class Class {
         return proficiencyBonus;
     }
 
-
+    public HashMap<String, Object> getOtherClassValues() {
+        return otherClassValues;
+    }
     
 }

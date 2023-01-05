@@ -4,13 +4,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import item.Currency;
 import item.Item;
 import item.ItemFactory;
-import item.Weapon;
-import item.WeaponDamage;
 
 public class ItemFactoryTest {
     @Test

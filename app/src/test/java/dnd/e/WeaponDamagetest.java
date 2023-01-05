@@ -2,8 +2,6 @@ package dnd.e;
 
 import org.junit.jupiter.api.Test;
 
-import character.Skill;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -21,7 +19,6 @@ public class WeaponDamagetest {
 
     @Test
     public void other() {
-        Skill s = new Skill(true, 12);
         ArrayList<String> skills = new ArrayList<>();
         skills.add("Acrobatics");
         System.out.println(skills.get(0));

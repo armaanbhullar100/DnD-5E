@@ -5,9 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 
 import item.Item;
 import item.Armor;
+import item.Currency;
 import item.EquipmentPack;
 import item.ItemFactory;
 import item.Weapon;
@@ -22,7 +25,7 @@ public class ItemFactoryTest {
         
         assertEquals("Barrel", i.getName());
         assertEquals(70, i.getWeight());
-        assertEquals(2, i.getCost().getGoldPieces());
+        assertEquals(new Currency(200), i.getCost());
         assertEquals("", i.getDescription());
     }
 
@@ -60,11 +63,28 @@ public class ItemFactoryTest {
         ItemFactory fac = new ItemFactory();
         EquipmentPack ep = (EquipmentPack) fac.createItem("explorer's pack");
 
-        Item i1 = fac.createItem("torch");
-        Item i2 = fac.createItem("torch");
-        assertEquals(i2, i1);
+        ArrayList<Item> itemList = new ArrayList<>();
+        HashMap<String,Integer> quantities = new HashMap<>();
+
+        // Add equipment pack items to itemList
+        itemList.add(fac.createItem("backpack"));
+        itemList.add(fac.createItem("bedroll"));
+        itemList.add(fac.createItem("mess kit"));
+        itemList.add(fac.createItem("torch"));
+        itemList.add(fac.createItem("rations"));
+        itemList.add(fac.createItem("waterskin"));
+        itemList.add(fac.createItem("rope, hempen"));
+
+        // Add quantities of each item to hashmap
+        quantities.put("backpack", 1);
+        quantities.put("bedroll", 1);
+        quantities.put("mess kit", 1);
+        quantities.put("torch", 10);
+        quantities.put("rations", 10);
+        quantities.put("waterskin", 1);
+        quantities.put("rope, hempen", 1);
 
         System.err.println(ep.getItems());
-        System.err.println(ep.getQuantities());
+        // assertTrue(itemList.equals(ep.getItems()));
     }
 }

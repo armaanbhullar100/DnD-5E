@@ -13,6 +13,32 @@ public class Item {
         this.description = description;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        } 
+        
+        Item i = (Item) obj;
+        if (!this.name.equals(i.getName())) {
+            System.err.println("1");
+            return false;
+        } else if (!this.weight.equals(i.getWeight())) {
+            System.err.println("2");
+            return false;
+        } else if (!(this.cost.equals(i.getCost()))) {
+            System.err.println("3");
+            return false;
+        } else if (!this.description.equals(i.getDescription())) {
+            System.err.println("4");
+            return false;
+        }
+
+        return true;
+    }
+
     public String getName() {
         return this.name;
     }

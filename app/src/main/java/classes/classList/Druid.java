@@ -12,9 +12,9 @@ public class Druid extends Class {
 
     public Druid(String name, int hitDice, ArrayList<String> itemProficiencies,
             ArrayList<String> savingThrowProficiencies, ArrayList<String> skillProficiencies,
-            HashMap<Item, Integer> equipment, ArrayList<Feature> features, Subclass subclass) {
-        super(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features,
-                subclass);
+            HashMap<Item, Integer> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String,Object> otherClassValues) {
+        super(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, otherClassValues);
+        //TODO Auto-generated constructor stub
     }
     
 }

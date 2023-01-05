@@ -28,7 +28,7 @@ public class ClassFactory {
         // }
 
         if (classType.equals("Barbarian")) {
-            return new Barbarian(classType, 0, null, null, null, null, null, null);
+            return new Barbarian(classType, 0, null, null, null, null, null, null, null);
         } else {
             return null;
         }

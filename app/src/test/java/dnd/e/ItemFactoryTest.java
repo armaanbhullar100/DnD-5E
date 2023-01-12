@@ -9,10 +9,12 @@ import java.util.Collections;
 import java.util.HashMap;
 
 import item.Item;
+import item.ItemComparator;
 import item.Armor;
 import item.Currency;
 import item.EquipmentPack;
 import item.ItemFactory;
+import item.Mount;
 import item.Weapon;
 import item.WeaponDamage;
 
@@ -63,6 +65,8 @@ public class ItemFactoryTest {
         ItemFactory fac = new ItemFactory();
         EquipmentPack ep = (EquipmentPack) fac.createItem("explorer's pack");
 
+        ArrayList<Item> packList = ep.getItems();
+
         ArrayList<Item> itemList = new ArrayList<>();
         HashMap<String,Integer> quantities = new HashMap<>();
 
@@ -84,7 +88,20 @@ public class ItemFactoryTest {
         quantities.put("waterskin", 1);
         quantities.put("rope, hempen", 1);
 
-        System.err.println(ep.getItems());
-        // assertTrue(itemList.equals(ep.getItems()));
+        Collections.sort(itemList, new ItemComparator());
+        Collections.sort(packList, new ItemComparator());
+
+        assertTrue(itemList.equals(packList));
+        assertTrue(quantities.equals(ep.getQuantities()));
+    }
+
+    // Test mount
+    @Test
+    public void mountTest() throws IOException {
+        ItemFactory fac = new ItemFactory();
+        Mount m = (Mount) fac.createItem("camel");
+
+        assertEquals(50, m.getSpeed());
+        assertEquals(480, m.getCarryingCapacity());
     }
 }

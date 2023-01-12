@@ -28,6 +28,30 @@ public class Currency {
         }
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Currency c = (Currency) obj;
+        if (this.copperPieces != c.getCopperPieces()) {
+            return false;
+        } else if (this.silverPieces != c.getSilverPieces()) {
+            return false;
+        } else if (this.electrumPieces != c.getElectrumPieces()) {
+            return false;
+        } else if (this.goldPieces != c.getGoldPieces()) {
+            return false;
+        } else if (this.platinumPieces != c.getPlatinumPieces()) {
+            return false;
+        }
+
+        return true;
+    }
+
     public int getCopperPieces() {
         return this.copperPieces;
     }

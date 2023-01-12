@@ -7,7 +7,8 @@
         "armorType": "Light",
         "armorClass": 11,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "true"
+        "stealthDisadvantage": "true",
+        "description": ""
     },
     "leather": {
         "name": "Leather Armor",
@@ -17,7 +18,8 @@
         "armorType": "Light",
         "armorClass": 11,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "false"
+        "stealthDisadvantage": "false",
+        "description": ""
     },
     "studded leather": {
         "name": "Studded Leather Armor",
@@ -27,7 +29,8 @@
         "armorType": "Light",
         "armorClass": 12,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "false"
+        "stealthDisadvantage": "false",
+        "description": ""
     },
     "hide": {
         "name": "Hide Armor",
@@ -37,7 +40,8 @@
         "armorType": "Medium",
         "armorClass": 12,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "false"
+        "stealthDisadvantage": "false",
+        "description": ""
     },
     "chain shirt": {
         "name": "Chain Shirt Armor",
@@ -47,7 +51,8 @@
         "armorType": "Medium",
         "armorClass": 13,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "false"
+        "stealthDisadvantage": "false",
+        "description": ""
     },
     "scale mail": {
         "name": "Scale Mail Armor",
@@ -57,7 +62,8 @@
         "armorType": "Medium",
         "armorClass": 14,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "true"
+        "stealthDisadvantage": "true",
+        "description": ""
     },
     "breastplate": {
         "name": "Breatplate Armor",
@@ -67,7 +73,8 @@
         "armorType": "Medium",
         "armorClass": 14,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "false"
+        "stealthDisadvantage": "false",
+        "description": ""
     },
     "half plate": {
         "name": "Half Plate Armor",
@@ -77,7 +84,8 @@
         "armorType": "Medium",
         "armorClass": 15,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "true"
+        "stealthDisadvantage": "true",
+        "description": ""
     },
     "ring mail": {
         "name": "Ring Mail Armor",
@@ -87,7 +95,8 @@
         "armorType": "Heavy",
         "armorClass": 14,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "true"
+        "stealthDisadvantage": "true",
+        "description": ""
     },
     "chain mail": {
         "name": "Chain Mail Armor",
@@ -97,7 +106,8 @@
         "armorType": "Heavy",
         "armorClass": 16,
         "strengthRequirement": 13,
-        "stealthDisadvantage": "true"
+        "stealthDisadvantage": "true",
+        "description": ""
     },
     "splint": {
         "name": "Splint Armor",
@@ -107,7 +117,8 @@
         "armorType": "Heavy",
         "armorClass": 17,
         "strengthRequirement": 15,
-        "stealthDisadvantage": "true"
+        "stealthDisadvantage": "true",
+        "description": ""
     },
     "plate": {
         "name": "Plate Armor",
@@ -117,7 +128,8 @@
         "armorType": "Heavy",
         "armorClass": 18,
         "strengthRequirement": 15,
-        "stealthDisadvantage": "true"
+        "stealthDisadvantage": "true",
+        "description": ""
     },
     "shield": {
         "name": "Shield",
@@ -127,7 +139,8 @@
         "armorType": "Shield",
         "armorClass": 2,
         "strengthRequirement": 0,
-        "stealthDisadvantage": "false"
+        "stealthDisadvantage": "false",
+        "description": ""
     },
     "club": {
         "name": "Club",
@@ -138,7 +151,8 @@
             "Light"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "dagger": {
         "name": "Dagger",
@@ -151,7 +165,8 @@
             "Thrown (range 20/60)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "greatclub": {
         "name": "Greatclub",
@@ -162,7 +177,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "handaxe": {
         "name": "Handaxe",
@@ -174,7 +190,8 @@
             "Thrown (range 20/60)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "javelin": {
         "name": "Javelin",
@@ -185,7 +202,8 @@
             "Thrown (range 30/120)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "light hammer": {
         "name": "Light Hammer",
@@ -197,7 +215,8 @@
             "Thrown (range 20/60)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "mace": {
         "name": "Mace",
@@ -208,7 +227,8 @@
             
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "quarterstaff": {
         "name": "Quarterstaff",
@@ -219,7 +239,8 @@
             "Versatile (1d8)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "sickle": {
         "name": "Sickle",
@@ -230,7 +251,8 @@
             "Light"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "spear": {
         "name": "Spear",
@@ -242,7 +264,8 @@
             "Versatile (1d8)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Melee"
+        "weaponType": "Simple Melee",
+        "description": ""
     },
     "crossbow, light": {
         "name": "Crossbow, light",
@@ -255,7 +278,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Ranged"
+        "weaponType": "Simple Ranged",
+        "description": ""
     },
     "dart": {
         "name": "Dart",
@@ -267,7 +291,8 @@
             "Thrown (range 20/60)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Ranged"
+        "weaponType": "Simple Ranged",
+        "description": ""
     },
     "shortbow": {
         "name": "Shortbow",
@@ -279,7 +304,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Ranged"
+        "weaponType": "Simple Ranged",
+        "description": ""
     },
     "sling": {
         "name": "Sling",
@@ -290,7 +316,8 @@
             "Ammunition (range 30/120)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Simple Ranged"
+        "weaponType": "Simple Ranged",
+        "description": ""
     },
     "battleaxe": {
         "name": "battleaxe",
@@ -301,7 +328,8 @@
             "Versatile (1d10)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "flail": {
         "name": "Flail",
@@ -312,7 +340,8 @@
             
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "glaive": {
         "name": "Glaive",
@@ -325,7 +354,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "greataxe": {
         "name": "Greataxe",
@@ -337,7 +367,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "greatsword": {
         "name": "Greatsword",
@@ -349,7 +380,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "halberd": {
         "name": "Halberd",
@@ -362,7 +394,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "lance": {
         "name": "Lance",
@@ -374,7 +407,8 @@
             "Special"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "longsword": {
         "name": "Longsword",
@@ -385,7 +419,8 @@
             "Versatile (1d10)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "maul": {
         "name": "Maul",
@@ -397,7 +432,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "morningstar": {
         "name": "Morningstar",
@@ -408,7 +444,8 @@
             
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "pike": {
         "name": "Pike",
@@ -421,7 +458,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "rapier": {
         "name": "Rapier",
@@ -432,7 +470,8 @@
             "Finesse"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "scimitar": {
         "name": "Scimitar",
@@ -444,7 +483,8 @@
             "Light"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "shortsword": {
         "name": "Shortsword",
@@ -456,7 +496,8 @@
             "Light"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "trident": {
         "name": "Trident",
@@ -468,7 +509,8 @@
             "Versatile (1d8)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "war pick": {
         "name": "War pick",
@@ -479,7 +521,8 @@
             
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "warhammer": {
         "name": "Warhammer",
@@ -490,7 +533,8 @@
             "Versatile (1d10)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "whip": {
         "name": "Whip",
@@ -502,7 +546,8 @@
             "Reach"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Melee"
+        "weaponType": "Martial Melee",
+        "description": ""
     },
     "blowgun": {
         "name": "Blowgun",
@@ -514,7 +559,8 @@
             "Loading"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Ranged"
+        "weaponType": "Martial Ranged",
+        "description": ""
     },
     "crossbow, hand": {
         "name": "Crossbow, hand",
@@ -527,7 +573,8 @@
             "Loading"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Ranged"
+        "weaponType": "Martial Ranged",
+        "description": ""
     },
     "crossbow, heavy": {
         "name": "Crossbow, heavy",
@@ -541,7 +588,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Ranged"
+        "weaponType": "Martial Ranged",
+        "description": ""
     },
     "longbow": {
         "name": "Longbow",
@@ -554,7 +602,8 @@
             "Two-handed"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Ranged"
+        "weaponType": "Martial Ranged",
+        "description": ""
     },
     "net": {
         "name": "Net",
@@ -566,7 +615,8 @@
             "Thrown (range 5/15)"
         ],
         "itemType": "Weapon",
-        "weaponType": "Martial Ranged"
+        "weaponType": "Martial Ranged",
+        "description": ""
     },
     "abacus": {
         "name": "Abacus",
@@ -679,7 +729,7 @@
     },
     "barrel": {
         "name": "Barrel",
-        "cost": 2,
+        "cost": 200,
         "weight": 70,
         "itemType": "Adventuring Gear",
         "description": ""
@@ -1284,7 +1334,8 @@
             "tinderbox": 1,
             "waterskin": 1,
             "rope, hempen": 1
-        }
+        },
+        "description": ""
     },
     "diplomat's pack": {
         "name": "Diplomat's Pack",
@@ -1303,7 +1354,8 @@
             "perfume": 1,
             "sealing wax": 1,
             "soap": 1
-        }
+        },
+        "description": ""
     },
     "dungeoneer's pack": {
         "name": "Dungeoneer's Pack",
@@ -1320,7 +1372,8 @@
             "rations": 10,
             "waterskin": 1,
             "rope, hempen": 1
-        }
+        },
+        "description": ""
     },
     "entertainer's pack": {
         "name": "Entertainer's Pack",
@@ -1335,7 +1388,8 @@
             "rations": 5,
             "waterskin": 1,
             "disguise kit": 1 
-        }
+        },
+        "description": ""
     },
     "explorer's pack": {
         "name": "Explorer's Pack",
@@ -1350,7 +1404,8 @@
             "rations": 10,
             "waterskin": 1,
             "rope, hempen": 1
-        }
+        },
+        "description": ""
     },
     "priest's pack": {
         "name": "Priest's Pack",
@@ -1368,7 +1423,8 @@
             "vestments": 1,
             "rations": 2,
             "waterskin": 1
-        }
+        },
+        "description": ""
     },
     "scholar's pack": {
         "name": "Scholar's Pack",
@@ -1383,229 +1439,267 @@
             "parchment": 10,
             "bag of sand": 1,
             "dagger": 1
-        }
+        },
+        "description": ""
     },
     "alchemist's supplies": {
         "name": "Alchemist's supplies (Artisan's tool)",
         "cost": 5000,
         "weight": 8,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "brewer's supplies": {
         "name": "Brewer's supplies (Artisan's tool)",
         "cost": 2000,
         "weight": 9,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "calligrapher's supplies": {
         "name": "Calligrapher's supplies (Artisan's tool)",
         "cost": 1000,
         "weight": 5,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "carpenter's tools": {
         "name": "Carpenter's tools (Artisan's tool)",
         "cost": 800,
         "weight": 6,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "cartographer's tools": {
         "name": "Cartographer's tools (Artisan's tool)",
         "cost": 1500,
         "weight": 6,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "cobbler's tools": {
         "name": "Cobbler's tools (Artisan's tool)",
         "cost": 500,
         "weight": 5,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "cook's utensils": {
         "name": "Cook's utensils (Artisan's tool)",
         "cost": 100,
         "weight": 8,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "glassblower's tools": {
         "name": "Glassblower's tools (Artisan's tool)",
         "cost": 3000,
         "weight": 5,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "jeweler's tools": {
         "name": "Jeweler's tools (Artisan's tool)",
         "cost": 2500,
         "weight": 2,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "leatherworker's tools": {
         "name": "Leatherworker's tools (Artisan's tool)",
         "cost": 500,
         "weight": 5,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "mason's tools": {
         "name": "Mason's tools (Artisan's tool)",
         "cost": 1000,
         "weight": 8,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "painter's supplies": {
         "name": "Painter's supplies (Artisan's tool)",
         "cost": 1000,
         "weight": 5,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "potter's tools": {
         "name": "Potter's tools (Artisan's tool)",
         "cost": 1000,
         "weight": 3,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "smith's tools": {
         "name": "Smith's tools (Artisan's tool)",
         "cost": 2000,
         "weight": 8,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "tinker's tools": {
         "name": "Tinker's tools (Artisan's tool)",
         "cost": 5000,
         "weight": 10,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "weaver's tools": {
         "name": "Weaver's tools (Artisan's tool)",
         "cost": 100,
         "weight": 5,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "woodcarver's tools": {
         "name": "Woodcarver's tools (Artisan's tool)",
         "cost": 100,
         "weight": 5,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "disguise kit": {
         "name": "Disguise kit",
         "cost": 2500,
         "weight": 3,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "forgery kit": {
         "name": "Forgery kit",
         "cost": 1000,
         "weight": 8,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "dice set": {
         "name": "Dice set (Gaming set)",
         "cost": 10,
         "weight": 0,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "dragonchess set": {
         "name": "Dragonchess set (Gaming set)",
         "cost": 100,
         "weight": 0.5,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "playing card set": {
         "name": "Playing card set (Gaming set)",
         "cost": 50,
         "weight": 0,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "three-dragon ante set": {
         "name": "Three-Dragon Ante set (Gaming set)",
         "cost": 100,
         "weight": 0,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "herbalism kit": {
         "name": "Herbalism kit",
         "cost": 500,
         "weight": 3,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "bagpipes": {
         "name": "Bagpipes (Musical instrument)",
         "cost": 3000,
         "weight": 6,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "drum": {
         "name": "Drum (Musical instrument)",
         "cost": 600,
         "weight": 3,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "dulcimer": {
         "name": "Dulcimer (Musical instrument)",
         "cost": 2500,
         "weight": 10,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "flute": {
         "name": "Flute (Musical instrument)",
         "cost": 200,
         "weight": 1,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "lute": {
         "name": "Lute (Musical instrument)",
         "cost": 3500,
         "weight": 2,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "lyre": {
         "name": "Lyre (Musical instrument)",
         "cost": 3000,
         "weight": 2,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "horn": {
         "name": "Horn (Musical instrument)",
         "cost": 300,
         "weight": 2,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "pan flute": {
         "name": "Pan flute (Musical instrument)",
         "cost": 1200,
         "weight": 2,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "shawm": {
         "name": "Shawm (Musical instrument)",
         "cost": 200,
         "weight": 1,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "viol": {
         "name": "Viol (Musical instrument)",
         "cost": 3000,
         "weight": 1,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "navigator's tools": {
         "name": "Navigator's tools",
         "cost": 2500,
         "weight": 2,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "poisoner's kit": {
         "name": "Poisoner's kit",
         "cost": 5000,
         "weight": 2,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "thieves' tools": {
         "name": "Thieves' tools",
         "cost": 2500,
         "weight": 1,
-        "itemType": "Tool"
+        "itemType": "Tool",
+        "description": ""
     },
     "camel": {
         "name": "Camel",
@@ -1613,7 +1707,8 @@
         "cost": 5000,
         "speed": 50,
         "carryingCapacity": 480,
-        "itemType": "Mount"
+        "itemType": "Mount",
+        "description": ""
     },
     "donkey": {
         "name": "Donkey",
@@ -1621,7 +1716,8 @@
         "cost": 800,
         "speed": 40,
         "carryingCapacity": 420,
-        "itemType": "Mount"
+        "itemType": "Mount",
+        "description": ""
     },
     "mule": {
         "name": "Mule",
@@ -1629,7 +1725,8 @@
         "cost": 800,
         "speed": 40,
         "carryingCapacity": 420,
-        "itemType": "Mount"
+        "itemType": "Mount",
+        "description": ""
     },
     "elephant": {
         "name": "Elephant",
@@ -1637,7 +1734,8 @@
         "cost": 20000,
         "speed": 40,
         "carryingCapacity": 1320,
-        "itemType": "Mount"
+        "itemType": "Mount",
+        "description": ""
     },
     "horse, draft": {
         "name": "Horse, draft",
@@ -1645,7 +1743,8 @@
         "cost": 5000,
         "speed": 40,
         "carryingCapacity": 540,
-        "itemType": "Mount"
+        "itemType": "Mount",
+        "description": ""
     },
     "horse, riding": {
         "name": "Horse, riding",
@@ -1653,7 +1752,8 @@
         "cost": 7500,
         "speed": 60,
         "carryingCapacity": 480,
-        "itemType": "Mount"
+        "itemType": "Mount",
+        "description": ""
     },
     "mastiff": {
         "name": "Mastiff",
@@ -1661,7 +1761,8 @@
         "cost": 2500,
         "speed": 40,
         "carryingCapacity": 195,
-        "itemType": "Mount"
+        "itemType": "Mount",
+        "description": ""
     },
     "pony": {
         "name": "Pony",
@@ -1669,7 +1770,8 @@
         "cost": 3000,
         "speed": 40,
         "carryingCapacity": 225,
-        "itemType": "Mount"
+        "itemType": "Mount",
+        "description": ""
     },
     "warhorse": {
         "name": "Warhorse",
@@ -1677,6 +1779,7 @@
         "cost": 40000,
         "speed": 60,
         "carryingCapacity": 540,
-        "itemType": "Mount"
+        "itemType": "Mount",
+        "description": ""
     }
 }

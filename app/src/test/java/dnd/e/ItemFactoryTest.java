@@ -5,11 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 
 import item.Item;
-import item.ItemComparator;
 import item.Armor;
 import item.Currency;
 import item.EquipmentPack;

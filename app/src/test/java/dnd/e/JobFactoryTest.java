@@ -3,7 +3,6 @@ package dnd.e;
 import org.junit.jupiter.api.Test;
 
 import item.EquipmentPack;
-import item.Item;
 import item.ItemFactory;
 import job.Job;
 import job.JobFactory;
@@ -12,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class JobFactoryTest {
@@ -66,8 +64,8 @@ public class JobFactoryTest {
 
     @Test
     public void equipmentTest() throws IOException {
-        JobFactory fac1 = new JobFactory();
-        Job j = fac1.createJob("barbarian");
+        // JobFactory fac1 = new JobFactory();
+        // Job j = fac1.createJob("barbarian");
 
         ItemFactory fac2 = new ItemFactory();
         

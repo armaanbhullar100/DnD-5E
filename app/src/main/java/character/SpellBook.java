@@ -2,11 +2,11 @@ package character;
 
 import java.util.ArrayList;
 
-import classes.Class;
-import classes.Spell;
+import job.Job;
+import job.Spell;
 
 public class SpellBook {
-    private Class spellcastingClass;
+    private Job spellcastingClass;
     private String spellcastingAbility;
     private int spellSaveDC;
     private int spellAttackBonus;
@@ -22,7 +22,7 @@ public class SpellBook {
     private ArrayList<Spell> eightLevel = new ArrayList<>();
     private ArrayList<Spell> ninthLevel = new ArrayList<>();
 
-    public SpellBook(Class spellcastingClass, String spellcastingAbility, int spellSaveDC, int spellAttackBonus, ArrayList<Spell> cantrips, ArrayList<Spell> firstLevel, ArrayList<Spell> secondLevel, ArrayList<Spell> thirdLevel, ArrayList<Spell> fourthLevel, ArrayList<Spell> fifthLevel, ArrayList<Spell> sixthLevel, ArrayList<Spell> seventhLevel, ArrayList<Spell> eightLevel, ArrayList<Spell> ninthLevel) {
+    public SpellBook(Job spellcastingClass, String spellcastingAbility, int spellSaveDC, int spellAttackBonus, ArrayList<Spell> cantrips, ArrayList<Spell> firstLevel, ArrayList<Spell> secondLevel, ArrayList<Spell> thirdLevel, ArrayList<Spell> fourthLevel, ArrayList<Spell> fifthLevel, ArrayList<Spell> sixthLevel, ArrayList<Spell> seventhLevel, ArrayList<Spell> eightLevel, ArrayList<Spell> ninthLevel) {
         this.spellcastingClass = spellcastingClass;
         this.spellcastingAbility = spellcastingAbility;
         this.spellSaveDC = spellSaveDC;
@@ -39,7 +39,7 @@ public class SpellBook {
         this.ninthLevel = ninthLevel;
     }
 
-    public Class getSpellcastingClass() {
+    public Job getSpellcastingClass() {
         return spellcastingClass;
     }
 

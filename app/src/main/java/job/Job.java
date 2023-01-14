@@ -17,13 +17,13 @@ public class Job implements BarbarianInterface {
     private ArrayList<String> itemProficiencies = new ArrayList<>();
     private ArrayList<String> savingThrowProficiencies = new ArrayList<>();
     private ArrayList<String> skillProficiencies = new ArrayList<>();
-    private HashMap<Item,Integer> equipment = new HashMap<>();
+    private HashMap<String,Item> equipment = new HashMap<>();
     private ArrayList<Feature> features = new ArrayList<>();
     private Subclass subclass;
-    private HashMap<String, Object> otherJobValues = new HashMap<>();
+    private HashMap<String, ArrayList<Integer>> otherJobValues = new HashMap<>();
 
     public Job(String name, int hitDice, ArrayList<String> itemProficiencies, ArrayList<String> savingThrowProficiencies, 
-            ArrayList<String> skillProficiencies, HashMap<Item,Integer> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String, Object> otherJobValues) {
+            ArrayList<String> skillProficiencies, HashMap<String,Item> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String, ArrayList<Integer>> otherJobValues) {
         this.name = name;
         this.level = 1;
         this.hitDice = hitDice;
@@ -60,7 +60,7 @@ public class Job implements BarbarianInterface {
         return skillProficiencies;
     }
 
-    public HashMap<Item, Integer> getEquipment() {
+    public HashMap<String,Item> getEquipment() {
         return equipment;
     }
 
@@ -76,7 +76,7 @@ public class Job implements BarbarianInterface {
         return proficiencyBonus;
     }
 
-    public HashMap<String, Object> getotherJobValues() {
+    public HashMap<String, ArrayList<Integer>> getOtherJobValues() {
         return otherJobValues;
     }
     

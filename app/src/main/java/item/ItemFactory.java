@@ -107,7 +107,7 @@ public class ItemFactory {
 
 
     // Create item but with a specificed amount, used to create equipment packs
-    private Item createItemWithCustomAmount(String itemName, int amount) {
+    public Item createItemWithCustomAmount(String itemName, int amount) {
         JSONObject newItem;
         try {
             newItem = new JSONObject(jsonString).getJSONObject(itemName.toLowerCase());

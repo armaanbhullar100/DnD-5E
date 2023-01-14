@@ -5,12 +5,14 @@ public class Item {
     private Double weight;
     private Currency cost;
     private String description;
+    private int amount;
 
-    public Item(String name, Double weight, Currency cost, String description) {
+    public Item(String name, Double weight, Currency cost, String description, int amount) {
         this.name = name;
         this.weight = weight;
         this.cost = cost;
         this.description = description;
+        this.amount = amount;
     }
 
     @Override
@@ -49,5 +51,9 @@ public class Item {
 
     public String getDescription() {
         return description;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 }

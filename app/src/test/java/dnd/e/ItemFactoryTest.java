@@ -29,6 +29,7 @@ public class ItemFactoryTest {
         assertEquals(70, i.getWeight());
         assertEquals(new Currency(200), i.getCost());
         assertEquals("", i.getDescription());
+        assertEquals(1, i.getAmount());
     }
 
     // Test armor
@@ -66,7 +67,6 @@ public class ItemFactoryTest {
         EquipmentPack ep = (EquipmentPack) fac.createItem("explorer's pack");
 
         ArrayList<Item> itemList = new ArrayList<>();
-        HashMap<String,Integer> quantities = new HashMap<>();
 
         // Add equipment pack items to itemList
         itemList.add(fac.createItem("backpack"));
@@ -77,16 +77,7 @@ public class ItemFactoryTest {
         itemList.add(fac.createItem("waterskin"));
         itemList.add(fac.createItem("rope, hempen"));
 
-        // Add quantities of each item to hashmap
-        quantities.put("backpack", 1);
-        quantities.put("bedroll", 1);
-        quantities.put("mess kit", 1);
-        quantities.put("torch", 10);
-        quantities.put("rations", 10);
-        quantities.put("waterskin", 1);
-        quantities.put("rope, hempen", 1);
-
-        EquipmentPack newPack = new EquipmentPack("Explorer's Pack", 59.0, new Currency(1000), "", itemList, quantities);
+        EquipmentPack newPack = new EquipmentPack("Explorer's Pack", 59.0, new Currency(1000), "", 1, itemList);
         
         assertTrue(newPack.equals(ep));
     }

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import character.Feature;
-import classes.Class;
+import classes.Job;
 import classes.classList.subclasses.Subclass;
 import item.Item;
 
-public class Wizard extends Class {
+public class Wizard extends Job {
 
     public Wizard(String name, int hitDice, ArrayList<String> itemProficiencies,
             ArrayList<String> savingThrowProficiencies, ArrayList<String> skillProficiencies,

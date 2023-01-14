@@ -8,7 +8,7 @@ import classes.classList.subclasses.Subclass;
 import classes.classMethodsInterfaces.BarbarianInterface;
 import item.*;
 
-public class Class implements BarbarianInterface {
+public class Job implements BarbarianInterface {
     private String name;
     private int level;
     private int proficiencyBonus;
@@ -22,7 +22,7 @@ public class Class implements BarbarianInterface {
     private Subclass subclass;
     private HashMap<String, Object> otherClassValues = new HashMap<>();
 
-    public Class(String name, int hitDice, ArrayList<String> itemProficiencies, ArrayList<String> savingThrowProficiencies, 
+    public Job(String name, int hitDice, ArrayList<String> itemProficiencies, ArrayList<String> savingThrowProficiencies, 
             ArrayList<String> skillProficiencies, HashMap<Item,Integer> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String, Object> otherClassValues) {
         this.name = name;
         this.level = 1;

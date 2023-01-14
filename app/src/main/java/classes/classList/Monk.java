@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import character.Feature;
-import classes.Class;
+import classes.Job;
 import classes.classList.subclasses.Subclass;
 import item.Item;
 
-public class Monk extends Class {
+public class Monk extends Job {
 
     public Monk(String name, int hitDice, ArrayList<String> itemProficiencies,
             ArrayList<String> savingThrowProficiencies, ArrayList<String> skillProficiencies,

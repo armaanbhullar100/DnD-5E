@@ -3,14 +3,14 @@ package character;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import classes.Class;
+import classes.Job;
 import item.Currency;
 import item.Weapon;
 
 public class Character {
     private String characterName;
     private String playerName;
-    private Class characterClass;
+    private Job characterClass;
     private int level;
     private Race race;
     private Background background;
@@ -46,7 +46,7 @@ public class Character {
     private SpellBook spells;
     private CharacterDescription description;
 
-    public Character(String characterName, String playerName, Class characterClass, Race race, Background background, String alignment, ArrayList<Integer> abilityScoresArray) {
+    public Character(String characterName, String playerName, Job characterClass, Race race, Background background, String alignment, ArrayList<Integer> abilityScoresArray) {
         this.characterName = characterName;
         this.playerName = playerName;
         this.characterClass = characterClass;
@@ -121,7 +121,7 @@ public class Character {
         return playerName;
     }
 
-    public Class getCharacterClass() {
+    public Job getCharacterClass() {
         return characterClass;
     }
 

@@ -34,7 +34,7 @@ public class ItemFactory {
         try {
             newItem = new JSONObject(jsonString).getJSONObject(itemName.toLowerCase());
         } catch (Exception e) {
-            // If item cannot be found, return basic info
+            // If item cannot be found, return null
             return null;
         } 
 

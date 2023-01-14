@@ -65,8 +65,6 @@ public class ItemFactoryTest {
         ItemFactory fac = new ItemFactory();
         EquipmentPack ep = (EquipmentPack) fac.createItem("explorer's pack");
 
-        ArrayList<Item> packList = ep.getItems();
-
         ArrayList<Item> itemList = new ArrayList<>();
         HashMap<String,Integer> quantities = new HashMap<>();
 
@@ -88,11 +86,9 @@ public class ItemFactoryTest {
         quantities.put("waterskin", 1);
         quantities.put("rope, hempen", 1);
 
-        Collections.sort(itemList, new ItemComparator());
-        Collections.sort(packList, new ItemComparator());
-
-        assertTrue(itemList.equals(packList));
-        assertTrue(quantities.equals(ep.getQuantities()));
+        EquipmentPack newPack = new EquipmentPack("Explorer's Pack", 59.0, new Currency(1000), "", itemList, quantities);
+        
+        assertTrue(newPack.equals(ep));
     }
 
     // Test mount

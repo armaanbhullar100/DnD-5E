@@ -2,8 +2,8 @@ package character;
 
 import java.util.ArrayList;
 
-import classes.Job;
-import classes.Spell;
+import job.Job;
+import job.Spell;
 
 public class SpellBook {
     private Job spellcastingClass;

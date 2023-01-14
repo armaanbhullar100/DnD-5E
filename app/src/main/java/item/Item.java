@@ -22,17 +22,13 @@ public class Item {
         } 
         
         Item i = (Item) obj;
-        if (!this.name.equals(i.getName())) {
-            System.err.println("1");
+        if (!name.equals(i.getName())) {
             return false;
-        } else if (!this.weight.equals(i.getWeight())) {
-            System.err.println("2");
+        } else if (!weight.equals(i.getWeight())) {
             return false;
-        } else if (!(this.cost.equals(i.getCost()))) {
-            System.err.println("3");
+        } else if (!(cost.equals(i.getCost()))) {
             return false;
-        } else if (!this.description.equals(i.getDescription())) {
-            System.err.println("4");
+        } else if (!description.equals(i.getDescription())) {
             return false;
         }
 
@@ -40,15 +36,15 @@ public class Item {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public Double getWeight() {
-        return this.weight;
+        return weight;
     }
 
     public Currency getCost() {
-        return this.cost;
+        return cost;
     }
 
     public String getDescription() {

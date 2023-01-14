@@ -3,9 +3,9 @@ package character;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import classes.Job;
 import item.Currency;
 import item.Weapon;
+import job.Job;
 
 public class Character {
     private String characterName;

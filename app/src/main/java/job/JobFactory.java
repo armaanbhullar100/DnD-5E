@@ -61,11 +61,11 @@ public class JobFactory {
         skillProficiencies.add("Intimidation");
 
         // Add section to let user choose equipment from options instead of getting prechosen items
-        HashMap<Item,Integer> equipment = new HashMap<>();
-        equipment.put(fac.createItem("greataxe"), 1);
-        equipment.put(fac.createItem("handaxe"), 2);
-        equipment.put(fac.createItem("explorer's pack"), 1);
-        equipment.put(fac.createItem("javelin"), 4);
+        HashMap<String,Item> equipment = new HashMap<>();
+        equipment.put("greataxe", fac.createItemWithCustomAmount("greataxe", 1));
+        equipment.put("handaxe", fac.createItemWithCustomAmount("handaxe", 1));
+        equipment.put("explorer's pack", fac.createItemWithCustomAmount("explorer's pack", 1));
+        equipment.put("javelin", fac.createItemWithCustomAmount("javelin", 4));
 
         // Get and create list of features from json array
         JSONArray jsonArrayFeatures = newItem.getJSONArray("features");
@@ -80,9 +80,11 @@ public class JobFactory {
         // Get extra mechanics of each class from json object and place into hashmap
         JSONObject extraMechanics = newItem.getJSONObject("extra mechanics");
         Iterator<String> objectKeys = extraMechanics.keySet().iterator();
-        HashMap<String,Object> otherJobValues = new HashMap<>();
+        HashMap<String,ArrayList<Integer>> otherJobValues = new HashMap<>();
         while (objectKeys.hasNext()) {
-            otherJobValues.put(objectKeys.next(), extraMechanics.get(objectKeys.next()));
+            String currKey = objectKeys.next();
+            otherJobValues.put(currKey, jsonArrayToArrayList(extraMechanics.get(currKey)));
+            // System.err.println(extraMechanics.get(currKey).getClass());
         }
         
         if (name.equals("Barbarian")) {
@@ -92,11 +94,12 @@ public class JobFactory {
         }
     }
 
-    public ArrayList<String> jsonArrayToArrayList(JSONArray jsonArray) {
-        ArrayList<String> newArray = new ArrayList<>();
+    public ArrayList<Integer> jsonArrayToArrayList(Object obj) {
+        JSONArray jsonArray = (JSONArray) obj;
+        ArrayList<Integer> newArray = new ArrayList<>();
 
         for (int i = 0; i < jsonArray.length(); i++) {
-            newArray.add(jsonArray.getString(i));
+            newArray.add(jsonArray.getInt(i));
         }
 
         return newArray;

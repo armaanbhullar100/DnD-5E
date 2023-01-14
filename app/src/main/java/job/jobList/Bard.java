@@ -12,7 +12,7 @@ public class Bard extends Job {
 
     public Bard(String name, int hitDice, ArrayList<String> itemProficiencies,
             ArrayList<String> savingThrowProficiencies, ArrayList<String> skillProficiencies,
-            HashMap<Item, Integer> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String,Object> otherJobValues) {
+            HashMap<String,Item> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String,ArrayList<Integer>> otherJobValues) {
         super(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, otherJobValues);
         //TODO Auto-generated constructor stub
     }

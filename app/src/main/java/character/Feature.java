@@ -13,6 +13,28 @@ public class Feature {
         this.level = level;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Feature f = (Feature) obj;
+        if (!name.equals(f.getName())) {
+            return false;
+        } else if (!description.equals(f.getDescription())) {
+            return false;
+        } else if (!source.equals(f.getSource())) {
+            return false;
+        } else if (level != f.getLevel()) {
+            return false;
+        }
+
+        return true;
+    }
+
     public String getName() {
         return name;
     }
@@ -28,6 +50,4 @@ public class Feature {
     public int getLevel() {
         return level;
     }
-
-    
 }

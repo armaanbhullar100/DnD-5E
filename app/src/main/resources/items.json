@@ -1317,7 +1317,7 @@
         "amount": 1
     },
     "rope, hempen": {
-        "name": "Rope, hempen (50 feet)",
+        "name": "Hempen Rope (50 feet)",
         "cost": 100,
         "weight": 10,
         "itemType": "Adventuring Gear",
@@ -1325,7 +1325,7 @@
         "amount": 1
     },
     "rope, silk": {
-        "name": "Rope, silk (50 feet)",
+        "name": "Silk Rope (50 feet)",
         "cost": 1000,
         "weight": 5,
         "itemType": "Adventuring Gear",

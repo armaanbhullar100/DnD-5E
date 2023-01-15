@@ -79,5 +79,20 @@ public class Job implements BarbarianInterface {
     public HashMap<String, ArrayList<Integer>> getOtherJobValues() {
         return otherJobValues;
     }
+
+    @Override
+    public int getRageDamage() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxRageNum() {
+        return 0;
+    }
+
+    @Override
+    public int getCurrRageNum() {
+        return 0;
+    }
     
 }

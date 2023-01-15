@@ -1,0 +1,69 @@
+{
+    "dwarf": {
+        "name": "Dwarf",
+        "ability score increase": {
+            "Constitution": 2
+        },
+        "size": "Medium",
+        "speed": 25,
+        "languages": [
+            "Common",
+            "Dwarvish"
+        ],
+        "features": [
+            {
+                "level": 1,
+                "name": "Darkvision",
+                "description": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+            },
+            {
+                "level": 1,
+                "name": "Dwarven Resilience",
+                "description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+            },
+            {
+                "level": 1,
+                "name": "Dwarven Combat Training",
+                "description": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+            },
+            {
+                "level": 1,
+                "name": "Tool Proficiency",
+                "description": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+            },
+            {
+                "level": 1,
+                "name": "Stonecunning",
+                "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+            }
+        ],
+        "subraces": {
+            "hill dwarf": {
+                "name": "Hill Dwarf",
+                "ability score increase": {
+                    "Wisdom": 1
+                },
+                "features": [
+                    {
+                        "level": 1,
+                        "name": "Dwarven Toughness",
+                        "description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+                    }
+                ]
+            },
+            "mountain dwarf": {
+                "name": "Mountain Dwarf",
+                "ability score increase": {
+                    "Strength": 2
+                },
+                "features": [
+                    {
+                        "level": 1,
+                        "name": "Dwarven Armor Training",
+                        "description": "You have proficiency with light and medium armor."
+                    }
+                ]
+            }
+        }
+    }
+}

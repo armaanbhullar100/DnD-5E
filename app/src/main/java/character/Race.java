@@ -1,24 +1,24 @@
 package character;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Race {
     private String name;
-    private ArrayList<AbilityScore> abilityScoreIncreases = new ArrayList<>();
+    private HashMap<String,Integer> abilityScoreIncreases = new HashMap<>();
     private int age;
     private String size;
     private int speed;
-    private ArrayList<Feature> traits = new ArrayList<>();
+    private ArrayList<Feature> features = new ArrayList<>();
     private ArrayList<String> languages = new ArrayList<>();
     private String subrace;
 
-    public Race(String name, ArrayList<AbilityScore> abilityScoreIncrease, int age, String size, int speed, ArrayList<Feature> traits, ArrayList<String> languages, String subrace) {
+    public Race(String name, HashMap<String,Integer> abilityScoreIncrease, String size, int speed, ArrayList<Feature> features, ArrayList<String> languages, String subrace) {
         this.name = name;
         this.abilityScoreIncreases = abilityScoreIncrease;
-        this.age = age;
         this.size = size;
         this.speed = speed;
-        this.traits = traits;
+        this.features = features;
         this.languages = languages;
         this.subrace = subrace;
     }
@@ -27,7 +27,7 @@ public class Race {
         return name;
     }
 
-    public ArrayList<AbilityScore> getAbilityScoreIncreases() {
+    public HashMap<String,Integer> getAbilityScoreIncreases() {
         return abilityScoreIncreases;
     }
 
@@ -43,8 +43,8 @@ public class Race {
         return speed;
     }
 
-    public ArrayList<Feature> getTraits() {
-        return traits;
+    public ArrayList<Feature> getFeatures() {
+        return features;
     }
 
     public ArrayList<String> getLanguages() {

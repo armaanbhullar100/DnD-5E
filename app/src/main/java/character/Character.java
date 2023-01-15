@@ -56,19 +56,19 @@ public class Character {
         this.level = 1;
         this.expPoints = 0;
 
-        abilityScores.put("strength", new AbilityScore(abilityScoresArray.get(0)));
-        abilityScores.put("dexerity", new AbilityScore(abilityScoresArray.get(1)));
-        abilityScores.put("constitution", new AbilityScore(abilityScoresArray.get(2)));
-        abilityScores.put("intelligence", new AbilityScore(abilityScoresArray.get(3)));
-        abilityScores.put("wisdom", new AbilityScore(abilityScoresArray.get(4)));
-        abilityScores.put("charisma", new AbilityScore(abilityScoresArray.get(5)));
+        abilityScores.put("Strength", new AbilityScore(abilityScoresArray.get(0)));
+        abilityScores.put("Dexerity", new AbilityScore(abilityScoresArray.get(1)));
+        abilityScores.put("Constitution", new AbilityScore(abilityScoresArray.get(2)));
+        abilityScores.put("Intelligence", new AbilityScore(abilityScoresArray.get(3)));
+        abilityScores.put("Wisdom", new AbilityScore(abilityScoresArray.get(4)));
+        abilityScores.put("Charisma", new AbilityScore(abilityScoresArray.get(5)));
 
-        savingThrows.put("strength", new SavingThrow(false, abilityScores.get("strength").getModifier()));
-        savingThrows.put("dexerity", new SavingThrow(false, abilityScores.get("dexerity").getModifier()));
-        savingThrows.put("constitution", new SavingThrow(false, abilityScores.get("constitution").getModifier()));
-        savingThrows.put("intelligence", new SavingThrow(false, abilityScores.get("intelligence").getModifier()));
-        savingThrows.put("wisdom", new SavingThrow(false, abilityScores.get("wisdom").getModifier()));
-        savingThrows.put("charisma", new SavingThrow(false, abilityScores.get("charisma").getModifier()));
+        savingThrows.put("Strength", new SavingThrow(false, abilityScores.get("strength").getModifier()));
+        savingThrows.put("Dexerity", new SavingThrow(false, abilityScores.get("dexerity").getModifier()));
+        savingThrows.put("Constitution", new SavingThrow(false, abilityScores.get("constitution").getModifier()));
+        savingThrows.put("Intelligence", new SavingThrow(false, abilityScores.get("intelligence").getModifier()));
+        savingThrows.put("Wisdom", new SavingThrow(false, abilityScores.get("wisdom").getModifier()));
+        savingThrows.put("Charisma", new SavingThrow(false, abilityScores.get("charisma").getModifier()));
 
         ArrayList<String> stp = characterClass.getSavingThrowProficiencies();
         for (int i = 0; i < stp.size(); i++) {

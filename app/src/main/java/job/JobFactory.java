@@ -28,33 +28,33 @@ public class JobFactory {
 
     public Job createJob(String jobType) throws IOException {
         ItemFactory fac = new ItemFactory();
-        JSONObject newItem;
+        JSONObject newJob;
         
         try {
-            newItem = new JSONObject(jsonString).getJSONObject(jobType.toLowerCase());
+            newJob = new JSONObject(jsonString).getJSONObject(jobType.toLowerCase());
         } catch (Exception e) {
-            // If class cannot be found, return null
+            // If job cannot be found, return null
             return null;
         }
         
-        String name = newItem.getString("name");
-        int hitDice = newItem.getInt("hitDice");
+        String name = newJob.getString("name");
+        int hitDice = newJob.getInt("hitDice");
         
         // Get item proficiencies from json array
-        JSONArray jsonItemProficiencies = newItem.getJSONArray("itemProficiencies");
+        JSONArray jsonItemProficiencies = newJob.getJSONArray("itemProficiencies");
         ArrayList<String> itemProficiencies = new ArrayList<>();
         for (int i = 0; i < jsonItemProficiencies.length(); i++) {
             itemProficiencies.add(jsonItemProficiencies.getString(i));
         }
         
         // Get saving throw proficiencies from json array
-        JSONArray jsonSavingThrowProficiencies = newItem.getJSONArray("savingThrowProficiencies");
+        JSONArray jsonSavingThrowProficiencies = newJob.getJSONArray("savingThrowProficiencies");
         ArrayList<String> savingThrowProficiencies = new ArrayList<>();
         for (int i = 0; i < jsonSavingThrowProficiencies.length(); i++) {
             savingThrowProficiencies.add(jsonSavingThrowProficiencies.getString(i));
         }
 
-        // JSONObject skillInfo = newItem.getJSONObject("skillProficiencies");
+        // JSONObject skillInfo = newJob.getJSONObject("skillProficiencies");
         // Add section to make user choose number of options from list
         ArrayList<String> skillProficiencies = new ArrayList<>();
         skillProficiencies.add("Athletics");
@@ -68,7 +68,7 @@ public class JobFactory {
         equipment.put("javelin", fac.createItemWithCustomAmount("javelin", 4));
 
         // Get and create list of features from json array
-        JSONArray jsonArrayFeatures = newItem.getJSONArray("features");
+        JSONArray jsonArrayFeatures = newJob.getJSONArray("features");
         ArrayList<Feature> features = new ArrayList<>();
         for (int i = 0; i < jsonArrayFeatures.length(); i++) {
             JSONObject currFeature = jsonArrayFeatures.getJSONObject(i);
@@ -77,14 +77,13 @@ public class JobFactory {
 
         // Figure out a way to do subclasses
 
-        // Get extra mechanics of each class from json object and place into hashmap
-        JSONObject extraMechanics = newItem.getJSONObject("extra mechanics");
-        Iterator<String> objectKeys = extraMechanics.keySet().iterator();
+        // Get extra mechanics of each job from json object and place into hashmap
+        JSONObject extraMechanics = newJob.getJSONObject("extra mechanics");
+        Iterator<String> objectKeys = extraMechanics.keys();
         HashMap<String,ArrayList<Integer>> otherJobValues = new HashMap<>();
         while (objectKeys.hasNext()) {
             String currKey = objectKeys.next();
             otherJobValues.put(currKey, jsonArrayToArrayList(extraMechanics.get(currKey)));
-            // System.err.println(extraMechanics.get(currKey).getClass());
         }
         
         if (name.equals("Barbarian")) {

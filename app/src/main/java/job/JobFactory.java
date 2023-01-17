@@ -41,20 +41,20 @@ public class JobFactory {
         int hitDice = newJob.getInt("hitDice");
         
         // Get item proficiencies from json array
-        JSONArray jsonItemProficiencies = newJob.getJSONArray("itemProficiencies");
+        JSONArray jsonItemProficiencies = newJob.getJSONArray("item proficiencies");
         ArrayList<String> itemProficiencies = new ArrayList<>();
         for (int i = 0; i < jsonItemProficiencies.length(); i++) {
             itemProficiencies.add(jsonItemProficiencies.getString(i));
         }
         
         // Get saving throw proficiencies from json array
-        JSONArray jsonSavingThrowProficiencies = newJob.getJSONArray("savingThrowProficiencies");
+        JSONArray jsonSavingThrowProficiencies = newJob.getJSONArray("saving throw proficiencies");
         ArrayList<String> savingThrowProficiencies = new ArrayList<>();
         for (int i = 0; i < jsonSavingThrowProficiencies.length(); i++) {
             savingThrowProficiencies.add(jsonSavingThrowProficiencies.getString(i));
         }
 
-        // JSONObject skillInfo = newJob.getJSONObject("skillProficiencies");
+        // JSONObject skillInfo = newJob.getJSONObject("skill proficiencies");
         // Add section to make user choose number of options from list
         ArrayList<String> skillProficiencies = new ArrayList<>();
         skillProficiencies.add("Athletics");

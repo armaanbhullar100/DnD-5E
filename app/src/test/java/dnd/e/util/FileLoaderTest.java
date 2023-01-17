@@ -1,14 +1,14 @@
-package util;
+package dnd.e.util;
 
 import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
-//import static org.junit.jupiter.api.Assertions.*;
+
+import util.FileLoader;
 
 public class FileLoaderTest {
     @Test
     public void basicTest() throws IOException {
         FileLoader.loadResourceFile("items.json");
-        System.out.println("works");
     }
 }

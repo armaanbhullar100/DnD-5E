@@ -1,4 +1,4 @@
-package dnd.e;
+package dnd.e.item;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -73,8 +73,6 @@ public class ItemFactoryTest {
         itemList.add(fac.createItem("rations"));
         itemList.add(fac.createItem("waterskin"));
         itemList.add(fac.createItem("rope, hempen"));
-
-        System.err.println(itemList);
 
         EquipmentPack newPack = new EquipmentPack("Explorer's Pack", 59.0, new Currency(1000), "", 1, itemList);
         

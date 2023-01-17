@@ -2,18 +2,18 @@
     "barbarian": {
         "name": "Barbarian",
         "hitDice": 12,
-        "itemProficiencies": [
+        "item proficiencies": [
             "light armor",
             "medium armor",
             "shields",
             "simple weapons",
             "martial weapons"
         ],
-        "savingThrowProficiencies": [
+        "saving throw proficiencies": [
             "Strength",
             "Constitution"
         ],
-        "skillProficiencies": {
+        "skill proficiencies": {
             "number of choices": 2,
             "list of choices": [
                 "Animal Handling",

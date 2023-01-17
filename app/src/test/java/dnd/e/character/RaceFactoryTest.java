@@ -1,4 +1,4 @@
-package dnd.e;
+package dnd.e.character;
 
 import static org.junit.jupiter.api.Assertions.*;
 

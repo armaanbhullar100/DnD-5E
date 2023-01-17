@@ -1979,5 +1979,14 @@
         "itemType": "Mount",
         "description": "",
         "amount": 1
+    },
+    "currency pouch": {
+        "name": "Currency Pouch",
+        "weight": 0,
+        "cost": 0,
+        "description": "A pouch containing 1 gp.",
+        "amount": 1,
+        "itemType": "Currency",
+        "value": 100
     }
 }

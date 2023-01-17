@@ -32,8 +32,8 @@ public class ItemFactory {
         try {
             newItem = new JSONObject(jsonString).getJSONObject(itemName.toLowerCase());
         } catch (Exception e) {
-            // If item cannot be found, return null
-            return null;
+            // If item cannot be found, return basic item
+            return new Item(itemName, 0.0, new Currency(0), "", 1);
         } 
 
         String name = newItem.getString("name");
@@ -113,7 +113,7 @@ public class ItemFactory {
             newItem = new JSONObject(jsonString).getJSONObject(itemName.toLowerCase());
         } catch (Exception e) {
             // If item cannot be found, return null
-            return null;
+            return new Item(itemName, 0.0, new Currency(0), "", amount);
         } 
 
         String name = newItem.getString("name");

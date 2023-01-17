@@ -1,4 +1,4 @@
-package dnd.e;
+package dnd.e.job;
 
 import org.junit.jupiter.api.Test;
 

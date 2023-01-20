@@ -5,8 +5,8 @@ public class Mount extends Item {
     private int speed;
     private int carryingCapacity;
 
-    public Mount(String name, Double weight, Currency cost, String description, int amount, int speed, int carryingCapacity) {
-        super(name, weight, cost, description, amount);
+    public Mount(String name, Double weight, Currency cost, String description, String itemType, int amount, int speed, int carryingCapacity) {
+        super(name, weight, cost, description, itemType, amount);
         this.speed = speed;
         this.carryingCapacity = carryingCapacity;
     }

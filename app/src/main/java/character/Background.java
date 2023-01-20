@@ -21,6 +21,22 @@ public class Background {
         this.features = features;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Background b = (Background) obj;
+        if (!name.equals(b.getName())) {
+            return false;
+        }
+
+        return true;
+    }
+
     public String getName() {
         return name;
     }

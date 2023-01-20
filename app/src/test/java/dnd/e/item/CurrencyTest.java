@@ -28,4 +28,18 @@ public class CurrencyTest {
         assertTrue(curr1.equals(curr2));
     }
 
+    @Test
+    public void totalCurrencyTest() {
+        Currency curr = new Currency(125);
+        assertEquals(125, curr.getTotalCurrency());
+    }
+
+    @Test
+    public void increaseCurrencyTest() {
+        Currency curr = new Currency(126);
+        curr.increaseCurrency(125);
+        
+        assertEquals(251, curr.getTotalCurrency());
+    }
+
 }

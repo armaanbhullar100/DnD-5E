@@ -72,10 +72,10 @@ public class JobFactoryTest {
         ItemFactory fac2 = new ItemFactory();
 
         HashMap<String,Item> newEquipment = new HashMap<>();
-        newEquipment.put("greataxe", fac2.createItemWithCustomAmount("greataxe", 1));
-        newEquipment.put("handaxe", fac2.createItemWithCustomAmount("handaxe", 1));
-        newEquipment.put("explorer's pack", fac2.createItemWithCustomAmount("explorer's pack", 1));
-        newEquipment.put("javelin", fac2.createItemWithCustomAmount("javelin", 4));
+        newEquipment.put("Greataxe", fac2.createItemWithCustomAmount("greataxe", 1));
+        newEquipment.put("Handaxe", fac2.createItemWithCustomAmount("handaxe", 1));
+        newEquipment.put("Explorer's Pack", fac2.createItemWithCustomAmount("explorer's pack", 1));
+        newEquipment.put("Javelin", fac2.createItemWithCustomAmount("javelin", 4));
 
         assertTrue(newEquipment.equals(j.getEquipment()));
     }

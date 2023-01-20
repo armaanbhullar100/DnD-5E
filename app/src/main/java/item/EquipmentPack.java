@@ -6,8 +6,8 @@ import java.util.Collections;
 public class EquipmentPack extends Item {
     private ArrayList<Item> items = new ArrayList<>();
 
-    public EquipmentPack(String name, Double weight, Currency cost, String description, int amount, ArrayList<Item> items) {
-        super(name, weight, cost, description, amount);
+    public EquipmentPack(String name, Double weight, Currency cost, String description, String itemType, int amount, ArrayList<Item> items) {
+        super(name, weight, cost, description, itemType, amount);
         this.items = items;
     }
 

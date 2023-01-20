@@ -62,10 +62,10 @@ public class JobFactory {
 
         // Add section to let user choose equipment from options instead of getting prechosen items
         HashMap<String,Item> equipment = new HashMap<>();
-        equipment.put("greataxe", fac.createItemWithCustomAmount("greataxe", 1));
-        equipment.put("handaxe", fac.createItemWithCustomAmount("handaxe", 1));
-        equipment.put("explorer's pack", fac.createItemWithCustomAmount("explorer's pack", 1));
-        equipment.put("javelin", fac.createItemWithCustomAmount("javelin", 4));
+        equipment.put("Greataxe", fac.createItemWithCustomAmount("greataxe", 1));
+        equipment.put("Handaxe", fac.createItemWithCustomAmount("handaxe", 1));
+        equipment.put("Explorer's Pack", fac.createItemWithCustomAmount("explorer's pack", 1));
+        equipment.put("Javelin", fac.createItemWithCustomAmount("javelin", 4));
 
         // Get and create list of features from json array
         JSONArray jsonArrayFeatures = newJob.getJSONArray("features");

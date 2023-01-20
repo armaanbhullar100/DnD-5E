@@ -2,8 +2,10 @@ package character;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import item.Currency;
+import item.Item;
 import item.Weapon;
 import job.Job;
 
@@ -38,9 +40,9 @@ public class Character {
     private String flaws;
 
     private ArrayList<String> languages = new ArrayList<>();
-    private ArrayList<String> proficiencies = new ArrayList<>(); 
-    private ArrayList<String> equipment = new ArrayList<>();
-    private Currency wealth;
+    private ArrayList<String> itemProficiencies = new ArrayList<>(); 
+    private HashMap<String,Item> equipment = new HashMap<>();
+    private Currency wealth = new Currency(0);
     private ArrayList<Feature> features = new ArrayList<>();
     private ArrayList<Weapon> weapons = new ArrayList<>();
     private SpellBook spells;
@@ -56,6 +58,7 @@ public class Character {
         this.level = 1;
         this.expPoints = 0;
 
+        // Assign ability score values
         abilityScores.put("Strength", new AbilityScore(abilityScoresArray.get(0)));
         abilityScores.put("Dexerity", new AbilityScore(abilityScoresArray.get(1)));
         abilityScores.put("Constitution", new AbilityScore(abilityScoresArray.get(2)));
@@ -63,37 +66,41 @@ public class Character {
         abilityScores.put("Wisdom", new AbilityScore(abilityScoresArray.get(4)));
         abilityScores.put("Charisma", new AbilityScore(abilityScoresArray.get(5)));
 
-        savingThrows.put("Strength", new SavingThrow(false, abilityScores.get("strength").getModifier()));
-        savingThrows.put("Dexerity", new SavingThrow(false, abilityScores.get("dexerity").getModifier()));
-        savingThrows.put("Constitution", new SavingThrow(false, abilityScores.get("constitution").getModifier()));
-        savingThrows.put("Intelligence", new SavingThrow(false, abilityScores.get("intelligence").getModifier()));
-        savingThrows.put("Wisdom", new SavingThrow(false, abilityScores.get("wisdom").getModifier()));
-        savingThrows.put("Charisma", new SavingThrow(false, abilityScores.get("charisma").getModifier()));
+        // Assign saving throw values
+        savingThrows.put("Strength", new SavingThrow(false, abilityScores.get("Strength").getModifier()));
+        savingThrows.put("Dexerity", new SavingThrow(false, abilityScores.get("Dexerity").getModifier()));
+        savingThrows.put("Constitution", new SavingThrow(false, abilityScores.get("Constitution").getModifier()));
+        savingThrows.put("Intelligence", new SavingThrow(false, abilityScores.get("Intelligence").getModifier()));
+        savingThrows.put("Wisdom", new SavingThrow(false, abilityScores.get("Wisdom").getModifier()));
+        savingThrows.put("Charisma", new SavingThrow(false, abilityScores.get("Charisma").getModifier()));
 
+        // Set proficiencies of saving throws from character class to true
         ArrayList<String> stp = characterClass.getSavingThrowProficiencies();
         for (int i = 0; i < stp.size(); i++) {
             savingThrows.get(stp.get(i)).setProficient(true);
         }
 
-        skills.put("Acrobatics", new Skill(false, abilityScores.get("dexerity").getModifier()));
-        skills.put("Animal Handling", new Skill(false, abilityScores.get("wisdom").getModifier()));
-        skills.put("Arcana", new Skill(false, abilityScores.get("intelligence").getModifier()));
-        skills.put("Athletics", new Skill(false, abilityScores.get("strength").getModifier()));
-        skills.put("Deception", new Skill(false, abilityScores.get("charisma").getModifier()));
-        skills.put("History", new Skill(false, abilityScores.get("intelligence").getModifier()));
-        skills.put("Insight", new Skill(false, abilityScores.get("wisdom").getModifier()));
-        skills.put("Intimidation", new Skill(false, abilityScores.get("charisma").getModifier()));
-        skills.put("Investigation", new Skill(false, abilityScores.get("intelligence").getModifier()));
-        skills.put("Medicine", new Skill(false, abilityScores.get("wisdom").getModifier()));
-        skills.put("Nature", new Skill(false, abilityScores.get("intelligence").getModifier()));
-        skills.put("Perception", new Skill(false, abilityScores.get("wisdom").getModifier()));
-        skills.put("Performance", new Skill(false, abilityScores.get("charisma").getModifier()));
-        skills.put("Persuasion", new Skill(false, abilityScores.get("charisma").getModifier()));
-        skills.put("Religion", new Skill(false, abilityScores.get("intelligence").getModifier()));
-        skills.put("Sleight of Hand", new Skill(false, abilityScores.get("dexerity").getModifier()));
-        skills.put("Stealth", new Skill(false, abilityScores.get("dexerity").getModifier()));
-        skills.put("Survival", new Skill(false, abilityScores.get("wisdom").getModifier()));
+        // Assign skills from ability scores
+        skills.put("Acrobatics", new Skill(false, abilityScores.get("Dexerity").getModifier()));
+        skills.put("Animal Handling", new Skill(false, abilityScores.get("Wisdom").getModifier()));
+        skills.put("Arcana", new Skill(false, abilityScores.get("Intelligence").getModifier()));
+        skills.put("Athletics", new Skill(false, abilityScores.get("Strength").getModifier()));
+        skills.put("Deception", new Skill(false, abilityScores.get("Charisma").getModifier()));
+        skills.put("History", new Skill(false, abilityScores.get("Intelligence").getModifier()));
+        skills.put("Insight", new Skill(false, abilityScores.get("Wisdom").getModifier()));
+        skills.put("Intimidation", new Skill(false, abilityScores.get("Charisma").getModifier()));
+        skills.put("Investigation", new Skill(false, abilityScores.get("Intelligence").getModifier()));
+        skills.put("Medicine", new Skill(false, abilityScores.get("Wisdom").getModifier()));
+        skills.put("Nature", new Skill(false, abilityScores.get("Intelligence").getModifier()));
+        skills.put("Perception", new Skill(false, abilityScores.get("Wisdom").getModifier()));
+        skills.put("Performance", new Skill(false, abilityScores.get("Charisma").getModifier()));
+        skills.put("Persuasion", new Skill(false, abilityScores.get("Charisma").getModifier()));
+        skills.put("Religion", new Skill(false, abilityScores.get("Intelligence").getModifier()));
+        skills.put("Sleight of Hand", new Skill(false, abilityScores.get("Dexerity").getModifier()));
+        skills.put("Stealth", new Skill(false, abilityScores.get("Dexerity").getModifier()));
+        skills.put("Survival", new Skill(false, abilityScores.get("Wisdom").getModifier()));
 
+        // Set proficiencies of skills from background and character class
         ArrayList<String> spb = background.getSkillProficiencies();
         ArrayList<String> spc = characterClass.getSkillProficiencies();
         for (int i = 0; i < spb.size(); i++) {
@@ -104,13 +111,91 @@ public class Character {
         }
 
         this.proficiencyBonus = 2;
-        this.maxHitPoints = characterClass.getHitDice() + abilityScores.get("constitution").getModifier();
+        this.maxHitPoints = characterClass.getHitDice() + abilityScores.get("Constitution").getModifier();
         this.currHitPoints = maxHitPoints;
         this.tempHitPoints = 0;
         this.hitDice = new HitDice(characterClass.getHitDice());
         this.armorClass = 0;
-        this.initiative = abilityScores.get("dexerity").getModifier();
+        this.initiative = abilityScores.get("Dexerity").getModifier();
         this.inspiration = false;
+
+        // Get languages from background and race
+        ArrayList<String> lb = background.getLanguages();
+        ArrayList<String> lr = race.getLanguages();
+        for (int i = 0; i < lb.size(); i++) {
+            if (!languages.contains(lb.get(i))) {
+                languages.add(lb.get(i));
+            }
+        }
+        for (int i = 0; i < lr.size(); i++) {
+            if (!languages.contains(lr.get(i))) {
+                languages.add(lr.get(i));
+            }
+        }
+
+        // Get item proficiencies from background and character class
+        ArrayList<String> ipb = background.getToolProficiencies();
+        ArrayList<String> ipc = characterClass.getItemProficiencies();
+        for (int i = 0; i < ipb.size(); i++) {
+            if (!itemProficiencies.contains(ipb.get(i))) {
+                itemProficiencies.add(ipb.get(i));
+            }
+        }
+        for (int i = 0; i < ipc.size(); i++) {
+            if (!itemProficiencies.contains(ipc.get(i))) {
+                itemProficiencies.add(ipc.get(i));
+            }
+        }
+
+        // Get equipment from background and character class
+        ArrayList<Item> eb = background.getEquipment();
+        for (int i = 0; i < eb.size(); i++) {
+            Item currItem = eb.get(i);
+            if (!equipment.keySet().contains(currItem.getName())) {
+                equipment.put(currItem.getName(), currItem);
+            }
+        }
+        HashMap<String,Item> ec = characterClass.getEquipment();
+        Iterator<String> objectKeys = ec.keySet().iterator();
+        while (objectKeys.hasNext()) {
+            String currKey = objectKeys.next();
+            if (!equipment.keySet().contains(currKey)) {
+                equipment.put(currKey, ec.get(currKey));
+            }
+        }
+
+        // Get current wealth from background
+        for (int i = 0; i < eb.size(); i++) {
+            Item currItem = eb.get(i);
+            if (currItem.getName().equals("Currency Pouch")) {
+                wealth.increaseCurrency(currItem.getAmount()*100);
+            }
+        }
+
+        // Get features from background, race and character class
+        ArrayList<Feature> fb = background.getFeatures();
+        ArrayList<Feature> fr = race.getFeatures();
+        ArrayList<Feature> fc = characterClass.getFeatures();
+        for (int i = 0; i < fb.size(); i++) {
+            features.add(fb.get(i));
+        }
+        for (int i = 0; i < fr.size(); i++) {
+            features.add(fr.get(i));
+        }
+        for (int i = 0; i < fc.size(); i++) {
+            features.add(fc.get(i));
+        }
+
+        // Get weapons from character class
+        Iterator<Item> classEquipmentIterator = ec.values().iterator();
+        while (classEquipmentIterator.hasNext()) {
+            Item currItem = classEquipmentIterator.next();
+            if (currItem.getItemType().equals("Weapon")) {
+                weapons.add((Weapon)currItem);
+            }
+        }
+
+
     }
 
     public String getCharacterName() {
@@ -189,7 +274,7 @@ public class Character {
         return initiative;
     }
 
-    public boolean isInspiration() {
+    public boolean getInspiration() {
         return inspiration;
     }
 
@@ -213,11 +298,11 @@ public class Character {
         return languages;
     }
 
-    public ArrayList<String> getProficiencies() {
-        return proficiencies;
+    public ArrayList<String> getItemProficiencies() {
+        return itemProficiencies;
     }
 
-    public ArrayList<String> getEquipment() {
+    public HashMap<String, Item> getEquipment() {
         return equipment;
     }
 

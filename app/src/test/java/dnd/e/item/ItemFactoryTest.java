@@ -27,6 +27,7 @@ public class ItemFactoryTest {
         assertEquals(new Currency(200), i.getCost());
         assertEquals("", i.getDescription());
         assertEquals(1, i.getAmount());
+        assertEquals("Adventuring Gear", i.getItemType());
     }
 
     // Test armor
@@ -74,7 +75,7 @@ public class ItemFactoryTest {
         itemList.add(fac.createItem("waterskin"));
         itemList.add(fac.createItem("rope, hempen"));
 
-        EquipmentPack newPack = new EquipmentPack("Explorer's Pack", 59.0, new Currency(1000), "", 1, itemList);
+        EquipmentPack newPack = new EquipmentPack("Explorer's Pack", 59.0, new Currency(1000), "", "Equipment Pack", 1, itemList);
         
         assertTrue(newPack.equals(ep));
     }

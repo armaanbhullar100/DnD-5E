@@ -9,6 +9,25 @@ public class Skill {
         this.value = value;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Skill s = (Skill) obj;
+
+        if (value != s.getValue()) {
+            return false;
+        } else if (proficient != s.getProficient()) {
+            return false;
+        }
+
+        return true;
+    }
+
     public boolean getProficient() {
         return proficient;
     }

@@ -8,21 +8,21 @@ public class Currency {
     private int platinumPieces;
 
     public Currency(int value) {
-        this.copperPieces = 0;
-        this.silverPieces = 0;
-        this.electrumPieces = 0;
-        this.goldPieces = 0;
-        this.platinumPieces = 0;
+        copperPieces = 0;
+        silverPieces = 0;
+        electrumPieces = 0;
+        goldPieces = 0;
+        platinumPieces = 0;
 
         while (value > 0) {
             if (value >= 100) {
-                this.goldPieces += 1;
+                goldPieces += 1;
                 value -= 100;
             } else if (value >= 10) {
-                this.silverPieces += 1;
+                silverPieces += 1;
                 value -= 10;
             } else {
-                this.copperPieces += 1;
+                copperPieces += 1;
                 value -= 1;
             }
         }
@@ -37,15 +37,15 @@ public class Currency {
         }
 
         Currency c = (Currency) obj;
-        if (this.copperPieces != c.getCopperPieces()) {
+        if (copperPieces != c.getCopperPieces()) {
             return false;
-        } else if (this.silverPieces != c.getSilverPieces()) {
+        } else if (silverPieces != c.getSilverPieces()) {
             return false;
-        } else if (this.electrumPieces != c.getElectrumPieces()) {
+        } else if (electrumPieces != c.getElectrumPieces()) {
             return false;
-        } else if (this.goldPieces != c.getGoldPieces()) {
+        } else if (goldPieces != c.getGoldPieces()) {
             return false;
-        } else if (this.platinumPieces != c.getPlatinumPieces()) {
+        } else if (platinumPieces != c.getPlatinumPieces()) {
             return false;
         }
 
@@ -72,5 +72,22 @@ public class Currency {
         return this.platinumPieces;
     }
 
-    
+    public int getTotalCurrency() {
+        return goldPieces*100 + silverPieces*10 + copperPieces*1;
+    }
+
+    public void increaseCurrency(int value) {
+        while (value > 0) {
+            if (value >= 100) {
+                goldPieces += 1;
+                value -= 100;
+            } else if (value >= 10) {
+                silverPieces += 1;
+                value -= 10;
+            } else {
+                copperPieces += 1;
+                value -= 1;
+            }
+        }
+    }
 }

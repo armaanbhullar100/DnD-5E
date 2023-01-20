@@ -5,13 +5,15 @@ public class Item {
     private Double weight;
     private Currency cost;
     private String description;
+    private String itemType;
     private int amount;
 
-    public Item(String name, Double weight, Currency cost, String description, int amount) {
+    public Item(String name, Double weight, Currency cost, String description, String itemType, int amount) {
         this.name = name;
         this.weight = weight;
         this.cost = cost;
         this.description = description;
+        this.itemType = itemType;
         this.amount = amount;
     }
 
@@ -31,6 +33,8 @@ public class Item {
         } else if (!(cost.equals(i.getCost()))) {
             return false;
         } else if (!description.equals(i.getDescription())) {
+            return false;
+        } else if (!itemType.equals(i.getItemType())) {
             return false;
         }
 
@@ -58,7 +62,15 @@ public class Item {
         return description;
     }
 
+    public String getItemType() {
+        return itemType;
+    }
+
     public int getAmount() {
         return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }

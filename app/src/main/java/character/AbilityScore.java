@@ -2,11 +2,26 @@ package character;
 
 public class AbilityScore {
     private int value;
-    private int modifier;
 
     public AbilityScore(int value) {
         this.value = value;
-        this.modifier = Math.floorDiv((value - 10),2);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        AbilityScore as = (AbilityScore) obj;
+
+        if (value != as.getValue()) {
+            return false;
+        }
+
+        return true;
     }
 
     public int getValue() {
@@ -14,7 +29,7 @@ public class AbilityScore {
     }
 
     public int getModifier() {
-        return modifier;
+        return Math.floorDiv((value - 10),2);
     }
 
 }

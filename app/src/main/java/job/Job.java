@@ -36,6 +36,22 @@ public class Job implements BarbarianInterface {
         this.otherJobValues = otherJobValues;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Job j = (Job) obj;
+        if (!name.equals(j.getName())) {
+            return false;
+        }
+
+        return true;
+    }
+
     public String getName() {
         return name;
     }

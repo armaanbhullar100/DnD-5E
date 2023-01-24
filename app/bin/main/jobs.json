@@ -25,26 +25,27 @@
             ]
         },
         "equipment": {
-            "item 1": {
-                "choice 1": "1 - greataxe",
-                "choice 2": "1 - martial melee weapon"
-            },
-            "item 2": {
-                "choice 1": "2 - handaxe",
-                "choice 2": "1 - simple weapon"
-            },
-            "item 3": {
-                "choice 1": "1 - explorer's pack"
-            },
-            "item 4": {
-                "choice 1": "4 - javelin"
-            }
+            "item 1": [
+                "greataxe - 1",
+                "martial melee weapon - 1"
+            ],
+            "item 2": [
+                "handaxe - 2",
+                "simple weapon - 1"
+            ],
+            "item 3": [
+                "explorer's pack - 1"
+            ],
+            "item 4": [
+                "javelin - 4"
+            ]
         },
         "extra mechanics": {
             "number of rages": [2,2,3,3,3,4,4,4,4,4,4,5,5,5,5,5,6,6,6,-1],
             "rage damage": [2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,4],
             "current rages": [2]
         },
+        "subclass level requirement": 3,
         "subclasses": {
             "path of the berserker": {
                 "superclass": "Barbarian",

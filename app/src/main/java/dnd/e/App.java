@@ -3,12 +3,21 @@
  */
 package dnd.e;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import java.io.IOException;
+import java.util.Scanner;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+import character.Character;
+import character.CharacterController;
+
+public class App {
+
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+
+        CharacterController cc = new CharacterController();
+        Character c = cc.createCharacter(scan);
+        System.out.println(c.getCharacterName());
+
+        scan.close();
     }
 }

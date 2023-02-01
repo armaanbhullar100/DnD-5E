@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +15,8 @@ import character.RaceFactory;
 public class RaceFactoryTest {
     @Test
     public void basicRaceTest() throws IOException {
-        RaceFactory fac = new RaceFactory();
+        Scanner scan = new Scanner(System.in);
+        RaceFactory fac = new RaceFactory(scan);
         Race r = fac.createRace("dwarf");
 
         assertEquals("Dwarf", r.getName());
@@ -25,7 +27,8 @@ public class RaceFactoryTest {
 
     @Test
     public void abilityScoreTest() throws IOException {
-        RaceFactory fac = new RaceFactory();
+        Scanner scan = new Scanner(System.in);
+        RaceFactory fac = new RaceFactory(scan);
         Race r = fac.createRace("dwarf");
 
         HashMap<String,Integer> abilityScores = new HashMap<>();
@@ -37,7 +40,8 @@ public class RaceFactoryTest {
 
     @Test
     public void languageTest() throws IOException {
-        RaceFactory fac = new RaceFactory();
+        Scanner scan = new Scanner(System.in);
+        RaceFactory fac = new RaceFactory(scan);
         Race r = fac.createRace("dwarf");
 
         ArrayList<String> languages = new ArrayList<>();
@@ -49,7 +53,8 @@ public class RaceFactoryTest {
 
     @Test
     public void featureTest() throws IOException {
-        RaceFactory fac = new RaceFactory();
+        Scanner scan = new Scanner(System.in);
+        RaceFactory fac = new RaceFactory(scan);
         Race r = fac.createRace("dwarf");
 
         assertEquals("Darkvision", r.getFeatures().get(0).getName());

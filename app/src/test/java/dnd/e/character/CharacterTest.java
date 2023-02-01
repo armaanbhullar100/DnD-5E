@@ -21,13 +21,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class CharacterTest {
     @Test
     public void basicTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
 
         ArrayList<Integer> abilityScores = new ArrayList<>();
         abilityScores.add(12);
@@ -60,9 +62,10 @@ public class CharacterTest {
 
     @Test
     public void abilityScoreTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
 
         ArrayList<Integer> abilityScores = new ArrayList<>();
         abilityScores.add(12);
@@ -84,9 +87,10 @@ public class CharacterTest {
 
     @Test
     public void savingThrowTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
 
         ArrayList<Integer> abilityScores = new ArrayList<>();
         abilityScores.add(12);
@@ -108,9 +112,10 @@ public class CharacterTest {
 
     @Test
     public void skillTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
 
         ArrayList<Integer> abilityScores = new ArrayList<>();
         abilityScores.add(12);
@@ -132,9 +137,10 @@ public class CharacterTest {
 
     @Test
     public void languageTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
 
         ArrayList<Integer> abilityScores = new ArrayList<>();
         abilityScores.add(12);
@@ -156,9 +162,10 @@ public class CharacterTest {
 
     @Test
     public void itemProficiencyTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
 
         ArrayList<Integer> abilityScores = new ArrayList<>();
         abilityScores.add(12);
@@ -182,9 +189,10 @@ public class CharacterTest {
 
     @Test
     public void equipmentTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
         ItemFactory ifac = new ItemFactory();
 
         ArrayList<Integer> abilityScores = new ArrayList<>();
@@ -214,9 +222,10 @@ public class CharacterTest {
 
     @Test
     public void wealthTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
 
         ArrayList<Integer> abilityScores = new ArrayList<>();
         abilityScores.add(12);
@@ -233,9 +242,10 @@ public class CharacterTest {
 
     @Test
     public void featureTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
 
         ArrayList<Integer> abilityScores = new ArrayList<>();
         abilityScores.add(12);
@@ -258,9 +268,10 @@ public class CharacterTest {
 
     @Test
     public void weaponTest() throws IOException {
-        BackgroundFactory bfac = new BackgroundFactory();
-        RaceFactory rfac = new RaceFactory();
-        JobFactory jfac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory bfac = new BackgroundFactory(scan);
+        RaceFactory rfac = new RaceFactory(scan);
+        JobFactory jfac = new JobFactory(scan);
         ItemFactory ifac = new ItemFactory();
 
         ArrayList<Integer> abilityScores = new ArrayList<>();

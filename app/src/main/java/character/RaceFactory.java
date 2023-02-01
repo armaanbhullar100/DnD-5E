@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Scanner;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -12,8 +13,10 @@ import util.FileLoader;
 
 public class RaceFactory {
     String jsonString;
+    Scanner scan;
 
-    public RaceFactory() throws IOException {
+    public RaceFactory(Scanner scan) throws IOException {
+        this.scan = scan;
         try {
             this.jsonString = FileLoader.loadResourceFile("races.json");
         } catch (Exception e) {
@@ -60,10 +63,28 @@ public class RaceFactory {
         }
 
         // Add ability to choose subrace
-
-        JSONObject subrace = newRace.getJSONObject("subraces").getJSONObject("hill dwarf");
-        String subraceName = subrace.getString("name");
+        // JSONObject subraces = newRace.getJSONObject("subraces");
+        // Iterator<String> subraceKeysIterator = subraces.keys();
         
+        // // Get subraces as arraylist
+        // ArrayList<String> subraceKeysList = new ArrayList<>();
+        // while (subraceKeysIterator.hasNext()) {
+        //     subraceKeysList.add(subraceKeysIterator.next());
+        // }
+
+        // // Display subraces for user to choose
+        // System.out.println("------------------------------------------");
+        // for (int i = 0; i < subraceKeysList.size(); i++) {
+        //     System.out.println(i + ": " + subraceKeysList.get(i));
+        // }
+        // System.out.println("------------------------------------------");
+        // System.out.print("Please choose a subrace by selecting its number: ");
+        // int subraceChoice = scan.nextInt();
+        // JSONObject subrace = newRace.getJSONObject("subraces").getJSONObject(subraceKeysList.get(subraceChoice));
+        
+        // Uncomment the line below for testing
+        JSONObject subrace = newRace.getJSONObject("subraces").getJSONObject("hill dwarf");
+
         // Get ability score from subrace
         abilityScoreIncreaseObject = subrace.getJSONObject("ability score increase");
         objectKeys = abilityScoreIncreaseObject.keys();
@@ -79,6 +100,6 @@ public class RaceFactory {
             features.add(new Feature(currFeature.getString("name"), currFeature.getString("description"), name, currFeature.getInt("level")));
         }
 
-        return new Race(name, abilityScoreIncrease , size, speed, features, languages, subraceName);
+        return new Race(name, abilityScoreIncrease , size, speed, features, languages, subrace.getString("name"));
     }
 }

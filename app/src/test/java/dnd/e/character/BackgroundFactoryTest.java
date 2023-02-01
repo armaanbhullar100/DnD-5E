@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,8 @@ import item.ItemFactory;
 public class BackgroundFactoryTest {
     @Test
     public void basicBackgroundTest() throws IOException {
-        BackgroundFactory fac = new BackgroundFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory fac = new BackgroundFactory(scan);
         Background b = fac.createBackground("acolyte");
 
         assertEquals("Acolyte", b.getName());
@@ -25,7 +27,8 @@ public class BackgroundFactoryTest {
 
     @Test
     public void skillProficienciesTest() throws IOException {
-        BackgroundFactory fac = new BackgroundFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory fac = new BackgroundFactory(scan);
         Background b = fac.createBackground("acolyte");
 
         ArrayList<String> newProficiencies = new ArrayList<>();
@@ -37,7 +40,8 @@ public class BackgroundFactoryTest {
 
     @Test
     public void toolProficienciesTest() throws IOException {
-        BackgroundFactory fac = new BackgroundFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory fac = new BackgroundFactory(scan);
         Background b = fac.createBackground("acolyte");
 
         ArrayList<String> newProficiencies = new ArrayList<>();
@@ -47,7 +51,8 @@ public class BackgroundFactoryTest {
 
     @Test
     public void languages() throws IOException {
-        BackgroundFactory fac = new BackgroundFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory fac = new BackgroundFactory(scan);
         Background b = fac.createBackground("acolyte");
 
         ArrayList<String> newLanguages = new ArrayList<>();
@@ -59,7 +64,8 @@ public class BackgroundFactoryTest {
 
     @Test
     public void equipmentTest() throws IOException {
-        BackgroundFactory fac1 = new BackgroundFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory fac1 = new BackgroundFactory(scan);
         Background b = fac1.createBackground("acolyte");
 
         ItemFactory fac2 = new ItemFactory();
@@ -81,7 +87,8 @@ public class BackgroundFactoryTest {
 
     @Test
     public void featureTest() throws IOException {
-        BackgroundFactory fac1 = new BackgroundFactory();
+        Scanner scan = new Scanner(System.in);
+        BackgroundFactory fac1 = new BackgroundFactory(scan);
         Background b = fac1.createBackground("acolyte");
 
         assertEquals("Shelter of the Faithful", b.getFeatures().get(0).getName());

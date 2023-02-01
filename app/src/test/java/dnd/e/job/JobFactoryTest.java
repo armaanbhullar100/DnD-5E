@@ -13,12 +13,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 
 public class JobFactoryTest {
     @Test
     public void basicJobTest() throws IOException {
-        JobFactory fac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac = new JobFactory(scan);
         Job j = fac.createJob("barbarian");
 
         assertEquals("Barbarian", j.getName());
@@ -27,7 +29,8 @@ public class JobFactoryTest {
 
     @Test
     public void itemProficienciesTest() throws IOException {
-        JobFactory fac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac = new JobFactory(scan);
         Job j = fac.createJob("barbarian");
 
         ArrayList<String> newProficiencies = new ArrayList<>();
@@ -42,7 +45,8 @@ public class JobFactoryTest {
 
     @Test
     public void savingThrowProficienciesTest() throws IOException {
-        JobFactory fac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac = new JobFactory(scan);
         Job j = fac.createJob("barbarian");
 
         ArrayList<String> newProficiencies = new ArrayList<>();
@@ -54,7 +58,8 @@ public class JobFactoryTest {
 
     @Test
     public void skillProficienciesTest() throws IOException {
-        JobFactory fac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac = new JobFactory(scan);
         Job j = fac.createJob("barbarian");
 
         ArrayList<String> newProficiencies = new ArrayList<>();
@@ -66,7 +71,8 @@ public class JobFactoryTest {
 
     @Test
     public void equipmentTest() throws IOException {
-        JobFactory fac1 = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac1 = new JobFactory(scan);
         Job j = fac1.createJob("barbarian");
 
         ItemFactory fac2 = new ItemFactory();
@@ -82,7 +88,8 @@ public class JobFactoryTest {
 
     @Test
     public void featureTest() throws IOException {
-        JobFactory fac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac = new JobFactory(scan);
         Job j = fac.createJob("barbarian");
 
         ArrayList<Feature> features = new ArrayList<>();
@@ -97,7 +104,8 @@ public class JobFactoryTest {
 
     @Test
     public void otherJobValuesTest() throws IOException {
-        JobFactory fac = new JobFactory();
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac = new JobFactory(scan);
         Job j = fac.createJob("barbarian");
 
         ArrayList<Integer> newRageDam = new ArrayList<>();

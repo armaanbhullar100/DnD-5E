@@ -60,78 +60,77 @@ public class JobFactory {
         ArrayList<String> skillProficiencies = new ArrayList<>();
         
         // Get list of choices from jsonArray
-        JSONObject skillInfo = newJob.getJSONObject("skill proficiencies");
-        int numChoices = skillInfo.getInt("number of choices");
-        JSONArray jsonSkillChoices = skillInfo.getJSONArray("list of choices");
-        ArrayList<String> skillChoices = new ArrayList<>();
-        for (int i = 0; i < jsonSkillChoices.length(); i++) {
-            skillChoices.add(jsonSkillChoices.getString(i));
-        }
+        // JSONObject skillInfo = newJob.getJSONObject("skill proficiencies");
+        // int numChoices = skillInfo.getInt("number of choices");
+        // JSONArray jsonSkillChoices = skillInfo.getJSONArray("list of choices");
+        // ArrayList<String> skillChoices = new ArrayList<>();
+        // for (int i = 0; i < jsonSkillChoices.length(); i++) {
+        //     skillChoices.add(jsonSkillChoices.getString(i));
+        // }
 
-        for (int i = 0; i < numChoices; i++) {
-            System.out.println("------------------------------------------");
-            for (int j = 0; j < skillChoices.size(); j++) {
-                System.out.println(j + ": " + skillChoices.get(j));
-            }
-            System.out.println("------------------------------------------");
-            System.out.print("Please choose a skill by entering its number: ");
-            int choice = scan.nextInt();
-            skillProficiencies.add(skillChoices.get(choice));
-            skillChoices.remove(choice);
-        }
+        // for (int i = 0; i < numChoices; i++) {
+        //     System.out.println("------------------------------------------");
+        //     for (int j = 0; j < skillChoices.size(); j++) {
+        //         System.out.println(j + ": " + skillChoices.get(j));
+        //     }
+        //     System.out.println("------------------------------------------");
+        //     System.out.print("Please choose a skill by entering its number: ");
+        //     int choice = scan.nextInt();
+        //     skillProficiencies.add(skillChoices.get(choice));
+        //     skillChoices.remove(choice);
+        // }
         
         // Uncomment the lines below for test purposes
         skillProficiencies.add("Athletics");
         skillProficiencies.add("Intimidation");
 
         HashMap<String,Item> equipment = new HashMap<>();
-
+        
         // Add section to let user choose equipment from options instead of getting prechosen items
-        JSONObject equipmentInfo = newJob.getJSONObject("equipment");
+        // JSONObject equipmentInfo = newJob.getJSONObject("equipment");
+        // for (int i = 1; i <= equipmentInfo.length(); i++) {
+        //     JSONArray equipmentChoice = equipmentInfo.getJSONArray("item " + i);
+        //     System.out.println("------------------------------------------");
+        //     for (int j = 0; j < equipmentChoice.length(); j++) {
+        //        System.out.println(j + ": " +  equipmentChoice.getString(j));
+        //     }
+        //     System.out.println("------------------------------------------");
+        //     System.out.print("Please choose a piece of equipment by entering its number: ");
+        //     int choice = scan.nextInt();
 
-        for (int i = 1; i <= equipmentInfo.length(); i++) {
-            JSONArray equipmentChoice = equipmentInfo.getJSONArray("item " + i);
-            System.out.println("------------------------------------------");
-            for (int j = 0; j < equipmentChoice.length(); j++) {
-               System.out.println(j + ": " +  equipmentChoice.getString(j));
-            }
-            System.out.println("------------------------------------------");
-            System.out.print("Please choose a piece of equipment by entering its number: ");
-            int choice = scan.nextInt();
+        //     String itemString = equipmentChoice.getString(choice);
+        //     String itemName = itemString.split(" - ")[0];
+        //     int itemAmount = Integer.parseInt(itemString.split(" - ")[1]);
 
-            String itemString = equipmentChoice.getString(choice);
-            String itemName = itemString.split(" - ")[0];
-            int itemAmount = Integer.parseInt(itemString.split(" - ")[1]);
+        //     if (itemName.equals("simple weapon")) {
+        //         System.out.print("Please enter any simple weapon: ");
+        //         itemName = scan.next();
+        //     } else if (itemName.equals("simple melee weapon: ")) {
+        //         System.out.print("Please enter any simple melee weapon: ");
+        //         itemName = scan.next();
+        //     } else if ((itemName.equals("simple ranged weapon: "))) {
+        //         System.out.print("Please enter any simple ranged weapon: ");
+        //         itemName = scan.next();
+        //     } else if (itemName.equals("martial weapon: ")) {
+        //         System.out.print("Please enter any martial weapon: ");
+        //         itemName = scan.next();
+        //     } else if ((itemName.equals("martial melee weapon: "))) {
+        //         System.out.print("Please enter any martial melee weapon: ");
+        //         itemName = scan.next();
+        //     } else if ((itemName.equals("martial ranged weapon: "))) {
+        //         System.out.print("Please enter any martial melee weapon: ");
+        //         itemName = scan.next();
+        //     }
 
-            if (itemName.equals("simple weapon")) {
-                System.out.print("Please enter any simple weapon: ");
-                itemName = scan.next();
-            } else if (itemName.equals("simple melee weapon: ")) {
-                System.out.print("Please enter any simple melee weapon: ");
-                itemName = scan.next();
-            } else if ((itemName.equals("simple ranged weapon: "))) {
-                System.out.print("Please enter any simple ranged weapon: ");
-                itemName = scan.next();
-            } else if (itemName.equals("martial weapon: ")) {
-                System.out.print("Please enter any martial weapon: ");
-                itemName = scan.next();
-            } else if ((itemName.equals("martial melee weapon: "))) {
-                System.out.print("Please enter any martial melee weapon: ");
-                itemName = scan.next();
-            } else if ((itemName.equals("martial ranged weapon: "))) {
-                System.out.print("Please enter any martial melee weapon: ");
-                itemName = scan.next();
-            }
-
-            Item item = fac.createItemWithCustomAmount(itemName, itemAmount);
-            equipment.put(item.getName(), item);
-        }
+        //     Item item = fac.createItemWithCustomAmount(itemName, itemAmount);
+        //     equipment.put(item.getName(), item);
+        // }
 
         // Uncomment the lines below for test purposes
-        // equipment.put("Greataxe", fac.createItemWithCustomAmount("greataxe", 1));
-        // equipment.put("Handaxe", fac.createItemWithCustomAmount("handaxe", 1));
-        // equipment.put("Explorer's Pack", fac.createItemWithCustomAmount("explorer's pack", 1));
-        // equipment.put("Javelin", fac.createItemWithCustomAmount("javelin", 4));
+        equipment.put("Greataxe", fac.createItemWithCustomAmount("greataxe", 1));
+        equipment.put("Handaxe", fac.createItemWithCustomAmount("handaxe", 1));
+        equipment.put("Explorer's Pack", fac.createItemWithCustomAmount("explorer's pack", 1));
+        equipment.put("Javelin", fac.createItemWithCustomAmount("javelin", 4));
 
         // Get and create list of features from json array
         JSONArray jsonArrayFeatures = newJob.getJSONArray("features");

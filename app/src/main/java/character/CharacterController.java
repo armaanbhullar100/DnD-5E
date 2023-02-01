@@ -12,8 +12,8 @@ public class CharacterController {
 
     public Character createCharacter(Scanner scan) throws IOException {
         JobFactory jobFactory = new JobFactory(scan);
-        RaceFactory raceFactory = new RaceFactory();
-        BackgroundFactory backgroundFactory = new BackgroundFactory();
+        RaceFactory raceFactory = new RaceFactory(scan);
+        BackgroundFactory backgroundFactory = new BackgroundFactory(scan);
 
         // System.out.print("Please enter your character's name: ");
         // String characterName = scan.nextLine();

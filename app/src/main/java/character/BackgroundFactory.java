@@ -3,6 +3,7 @@ package character;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -13,8 +14,10 @@ import util.FileLoader;
 
 public class BackgroundFactory {
     String jsonString;
+    Scanner scan;
 
-    public BackgroundFactory() throws IOException {
+    public BackgroundFactory(Scanner scan) throws IOException {
+        this.scan = scan;
         try {
             this.jsonString = FileLoader.loadResourceFile("backgrounds.json");
         } catch (Exception e) {
@@ -46,11 +49,19 @@ public class BackgroundFactory {
             toolProficiencies.add(jsonToolProficiencies.getString(i));
         }
 
-        // WARNING: Add code to handle case where any language can be chosen
+        // Get languages from background json
         JSONArray jsonLanguages = newBackground.getJSONArray("languages");
         ArrayList<String> languages = new ArrayList<>();
         for (int i = 0; i < jsonLanguages.length(); i++) {
-            languages.add(jsonLanguages.getString(i));
+            String newLanguage = jsonLanguages.getString(i);
+
+            // Comment the lines below for testing
+            // if (newLanguage.equals("Any")) {
+            //     System.out.print("Please enter a language: ");
+            //     newLanguage = scan.nextLine();
+            // }
+
+            languages.add(newLanguage);
         }
 
         JSONObject jsonEquipment = newBackground.getJSONObject("equipment");

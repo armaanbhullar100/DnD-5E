@@ -21,6 +21,8 @@ public class Job implements BarbarianInterface {
     private ArrayList<Feature> features = new ArrayList<>();
     private Subclass subclass;
     private HashMap<String, ArrayList<Integer>> otherJobValues = new HashMap<>();
+    private SpellBook spellBook;
+    private SpellSlots spellSlots;
 
     public Job(String name, int hitDice, ArrayList<String> itemProficiencies, ArrayList<String> savingThrowProficiencies, 
             ArrayList<String> skillProficiencies, HashMap<String,Item> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String, ArrayList<Integer>> otherJobValues) {
@@ -94,6 +96,14 @@ public class Job implements BarbarianInterface {
 
     public HashMap<String, ArrayList<Integer>> getOtherJobValues() {
         return otherJobValues;
+    }
+
+    public SpellBook getSpellBook() {
+        return spellBook;
+    }
+
+    public SpellSlots getSpellSlots() {
+        return spellSlots;
     }
 
     @Override

@@ -1,5 +1,7 @@
 package job;
 
+import java.util.ArrayList;
+
 public class Spell {
     private String name;
     private String castingTime;
@@ -7,14 +9,16 @@ public class Spell {
     private String components;
     private String duration;
     private String description;
+    private ArrayList<String> usedBy;
     
-    public Spell(String name, String castingTime, int range, String components, String duration, String description) {
+    public Spell(String name, String castingTime, int range, String components, String duration, String description, ArrayList<String> usedBy) {
         this.name = name;
         this.castingTime = castingTime;
         this.range = range;
         this.components = components;
         this.duration = duration;
         this.description = description;
+        this.usedBy = usedBy;
     }
 
     public String getName() {
@@ -41,5 +45,8 @@ public class Spell {
         return description;
     }
 
+    public ArrayList<String> getUsedBy() {
+        return usedBy;
+    }
     
 }

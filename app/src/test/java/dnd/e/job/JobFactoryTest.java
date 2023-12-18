@@ -94,7 +94,7 @@ public class JobFactoryTest {
 
         ArrayList<Feature> features = new ArrayList<>();
         features.add(new Feature("Unarmored Defense", "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.", "Barbarian", 1));
-        features.add(new Feature("Fast Movement", "Starting at 5th level, your speed increases by 10 feet while you aren’t wearing heavy armor.", "Barbarian", 5));
+        features.add(new Feature("Fast Movement", "Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor.", "Barbarian", 5));
 
         assertTrue(features.get(0).equals(j.getFeatures().get(1)));
         assertTrue(features.get(1).equals(j.getFeatures().get(7)));

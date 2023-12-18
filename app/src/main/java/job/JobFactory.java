@@ -29,12 +29,12 @@ public class JobFactory {
         }
     }
 
-    public Job createJob(String jobType) throws IOException {
+    public Job createJob(String jobName) throws IOException {
         ItemFactory fac = new ItemFactory();
         JSONObject newJob;
         
         try {
-            newJob = new JSONObject(jsonString).getJSONObject(jobType.toLowerCase());
+            newJob = new JSONObject(jsonString).getJSONObject(jobName.toLowerCase());
         } catch (Exception e) {
             // If job cannot be found, return null
             return null;

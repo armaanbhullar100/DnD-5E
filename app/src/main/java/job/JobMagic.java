@@ -1,5 +1,7 @@
 package job;
 
+import magic.SpellSlots;
+
 public class JobMagic {
     private int spellSaveDC;
     private int spellAttackModifier;

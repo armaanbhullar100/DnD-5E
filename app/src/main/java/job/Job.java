@@ -7,6 +7,8 @@ import character.*;
 import item.*;
 import job.jobList.subclasses.Subclass;
 import job.jobMethodsInterface.BarbarianInterface;
+import magic.SpellBook;
+import magic.SpellSlots;
 
 public class Job implements BarbarianInterface {
     private String name;

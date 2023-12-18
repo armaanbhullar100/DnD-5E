@@ -1,4 +1,4 @@
-package job;
+package magic;
 
 import java.util.ArrayList;
 

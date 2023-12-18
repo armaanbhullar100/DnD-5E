@@ -1,4 +1,4 @@
-package job;
+package magic;
 
 public class SpellSlots {
     private int firstLevel;

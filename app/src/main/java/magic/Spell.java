@@ -1,28 +1,42 @@
-package job;
+package magic;
 
 import java.util.ArrayList;
 
 public class Spell {
     private String name;
+    private int level;
+    private String school;
     private String castingTime;
     private int range;
     private String components;
     private String duration;
     private String description;
     private ArrayList<String> usedBy;
+    private Boolean ritual;
     
-    public Spell(String name, String castingTime, int range, String components, String duration, String description, ArrayList<String> usedBy) {
+    public Spell(String name, int level, String school, String castingTime, int range, String components, String duration, String description, ArrayList<String> usedBy, Boolean ritual) {
         this.name = name;
+        this.level = level;
+        this.school = school;
         this.castingTime = castingTime;
         this.range = range;
         this.components = components;
         this.duration = duration;
         this.description = description;
         this.usedBy = usedBy;
+        this.ritual = ritual;
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public String getSchool() {
+        return school;
     }
 
     public String getCastingTime() {
@@ -49,4 +63,7 @@ public class Spell {
         return usedBy;
     }
     
+    public Boolean getRitual() {
+        return ritual;
+    }
 }

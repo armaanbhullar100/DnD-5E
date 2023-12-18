@@ -8,7 +8,7 @@ import item.Currency;
 import item.Item;
 import item.Weapon;
 import job.Job;
-import job.SpellBook;
+import magic.SpellBook;
 
 public class Character {
     private String characterName;

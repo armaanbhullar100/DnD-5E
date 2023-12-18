@@ -1,5 +1,7 @@
 package job;
 
+import magic.Spell;
+
 public class EldritchInvocation {
     private String name;
     private String effect;

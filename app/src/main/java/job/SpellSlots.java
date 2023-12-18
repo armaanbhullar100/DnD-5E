@@ -58,6 +58,5 @@ public class SpellSlots {
     public int getNinthLevel() {
         return ninthLevel;
     }
-
     
 }

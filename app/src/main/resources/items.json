@@ -925,7 +925,7 @@
         "amount": 1
     },
     "clothes, common": {
-        "name": "Clothes, common",
+        "name": "Common clothes",
         "cost": 50,
         "weight": 3,
         "itemType": "Adventuring Gear",
@@ -933,7 +933,7 @@
         "amount": 1
     },
     "clothes, costume": {
-        "name": "Clothes, costume",
+        "name": "Costume",
         "cost": 500,
         "weight": 4,
         "itemType": "Adventuring Gear",
@@ -941,7 +941,7 @@
         "amount": 1
     },
     "clothes, fine": {
-        "name": "Clothes, fine",
+        "name": "Fine Clothes",
         "cost": 1500,
         "weight": 6,
         "itemType": "Adventuring Gear",
@@ -949,7 +949,7 @@
         "amount": 1
     },
     "clothes, traveler's": {
-        "name": "Clothes, traveler's",
+        "name": "Traveler's clothes",
         "cost": 200,
         "weight": 4,
         "itemType": "Adventuring Gear",
@@ -1261,7 +1261,7 @@
         "amount": 1
     },
     "pot, iron": {
-        "name": "Pot, iron",
+        "name": "Iron pot",
         "cost": 200,
         "weight": 10,
         "itemType": "Adventuring Gear",
@@ -1590,6 +1590,27 @@
             "parchment": 10,
             "bag of sand": 1,
             "dagger": 1
+        },
+        "description": "",
+        "amount": 1
+    },
+    "monster hunter;s pack": {
+        "name": "Monster Hunter's Pack",
+        "cost": 3300,
+        "weight": 49,
+        "itemType": "Equipment Pack",
+        "items": {
+            "chest": 1,
+            "crowbar": 1,
+            "hammer": 1,
+            "stake": 3,
+            "holy symbol": 1,
+            "holy water": 1,
+            "manacles": 10,
+            "steel mirror": 1,
+            "oil": 1,
+            "tinderbox": 1,
+            "torch": 3
         },
         "description": "",
         "amount": 1

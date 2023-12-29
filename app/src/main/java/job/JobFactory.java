@@ -41,7 +41,7 @@ public class JobFactory {
         }
         
         String name = newJob.getString("name");
-        int hitDice = newJob.getInt("hitDice");
+        int hitDice = newJob.getInt("hit dice");
         
         // Get item proficiencies from json array
         JSONArray jsonItemProficiencies = newJob.getJSONArray("item proficiencies");

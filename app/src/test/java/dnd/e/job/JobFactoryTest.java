@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-
 public class JobFactoryTest {
     @Test
     public void basicJobTest() throws IOException {

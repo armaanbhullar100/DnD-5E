@@ -68,12 +68,12 @@ public class Character {
         abilityScores.put("Charisma", new AbilityScore(abilityScoresArray.get(5)));
 
         // Assign saving throw values
-        savingThrows.put("Strength", new SavingThrow(false, abilityScores.get("Strength").getModifier()));
-        savingThrows.put("Dexerity", new SavingThrow(false, abilityScores.get("Dexerity").getModifier()));
-        savingThrows.put("Constitution", new SavingThrow(false, abilityScores.get("Constitution").getModifier()));
-        savingThrows.put("Intelligence", new SavingThrow(false, abilityScores.get("Intelligence").getModifier()));
-        savingThrows.put("Wisdom", new SavingThrow(false, abilityScores.get("Wisdom").getModifier()));
-        savingThrows.put("Charisma", new SavingThrow(false, abilityScores.get("Charisma").getModifier()));
+        savingThrows.put("Strength", new SavingThrow(false, getAbilityScoreModifier("Strength")));
+        savingThrows.put("Dexerity", new SavingThrow(false, getAbilityScoreModifier("Dexerity")));
+        savingThrows.put("Constitution", new SavingThrow(false, getAbilityScoreModifier("Consitution")));
+        savingThrows.put("Intelligence", new SavingThrow(false, getAbilityScoreModifier("Intelligence")));
+        savingThrows.put("Wisdom", new SavingThrow(false, getAbilityScoreModifier("Wisdom")));
+        savingThrows.put("Charisma", new SavingThrow(false, getAbilityScoreModifier("Charisma")));
 
         // Set proficiencies of saving throws from character class to true
         ArrayList<String> stp = characterClass.getSavingThrowProficiencies();
@@ -82,24 +82,24 @@ public class Character {
         }
 
         // Assign skills from ability scores
-        skills.put("Acrobatics", new Skill(false, abilityScores.get("Dexerity").getModifier()));
-        skills.put("Animal Handling", new Skill(false, abilityScores.get("Wisdom").getModifier()));
-        skills.put("Arcana", new Skill(false, abilityScores.get("Intelligence").getModifier()));
-        skills.put("Athletics", new Skill(false, abilityScores.get("Strength").getModifier()));
-        skills.put("Deception", new Skill(false, abilityScores.get("Charisma").getModifier()));
-        skills.put("History", new Skill(false, abilityScores.get("Intelligence").getModifier()));
-        skills.put("Insight", new Skill(false, abilityScores.get("Wisdom").getModifier()));
-        skills.put("Intimidation", new Skill(false, abilityScores.get("Charisma").getModifier()));
-        skills.put("Investigation", new Skill(false, abilityScores.get("Intelligence").getModifier()));
-        skills.put("Medicine", new Skill(false, abilityScores.get("Wisdom").getModifier()));
-        skills.put("Nature", new Skill(false, abilityScores.get("Intelligence").getModifier()));
-        skills.put("Perception", new Skill(false, abilityScores.get("Wisdom").getModifier()));
-        skills.put("Performance", new Skill(false, abilityScores.get("Charisma").getModifier()));
-        skills.put("Persuasion", new Skill(false, abilityScores.get("Charisma").getModifier()));
-        skills.put("Religion", new Skill(false, abilityScores.get("Intelligence").getModifier()));
-        skills.put("Sleight of Hand", new Skill(false, abilityScores.get("Dexerity").getModifier()));
-        skills.put("Stealth", new Skill(false, abilityScores.get("Dexerity").getModifier()));
-        skills.put("Survival", new Skill(false, abilityScores.get("Wisdom").getModifier()));
+        skills.put("Acrobatics", new Skill(false, getAbilityScoreModifier("Dexerity")));
+        skills.put("Animal Handling", new Skill(false, getAbilityScoreModifier("Wisdom")));
+        skills.put("Arcana", new Skill(false, getAbilityScoreModifier("Intelligence")));
+        skills.put("Athletics", new Skill(false, getAbilityScoreModifier("Strength")));
+        skills.put("Deception", new Skill(false, getAbilityScoreModifier("Charisma")));
+        skills.put("History", new Skill(false, getAbilityScoreModifier("Intelligence")));
+        skills.put("Insight", new Skill(false, getAbilityScoreModifier("Wisdom")));
+        skills.put("Intimidation", new Skill(false, getAbilityScoreModifier("Charisma")));
+        skills.put("Investigation", new Skill(false, getAbilityScoreModifier("Intelligence")));
+        skills.put("Medicine", new Skill(false, getAbilityScoreModifier("Wisdom")));
+        skills.put("Nature", new Skill(false, getAbilityScoreModifier("Intelligence")));
+        skills.put("Perception", new Skill(false, getAbilityScoreModifier("Wisdom")));
+        skills.put("Performance", new Skill(false, getAbilityScoreModifier("Charisma")));
+        skills.put("Persuasion", new Skill(false, getAbilityScoreModifier("Charisma")));
+        skills.put("Religion", new Skill(false, getAbilityScoreModifier("Intelligence")));
+        skills.put("Sleight of Hand", new Skill(false, getAbilityScoreModifier("Dexerity")));
+        skills.put("Stealth", new Skill(false, getAbilityScoreModifier("Dexerity")));
+        skills.put("Survival", new Skill(false, getAbilityScoreModifier("Wisdom")));
 
         // Set proficiencies of skills from background and character class
         ArrayList<String> spb = background.getSkillProficiencies();
@@ -112,7 +112,7 @@ public class Character {
         }
 
         this.proficiencyBonus = 2;
-        this.maxHitPoints = characterClass.getHitDice() + abilityScores.get("Constitution").getModifier();
+        this.maxHitPoints = characterClass.getHitDice() + getAbilityScoreModifier("Constitution");
         this.currHitPoints = maxHitPoints;
         this.tempHitPoints = 0;
         this.hitDice = new HitDice(characterClass.getHitDice());
@@ -198,6 +198,9 @@ public class Character {
 
         // Get magic from character class 
         // Assign Spell Save DC, Spell Attack Bonus, Spellcasting Ability, Ritual Casting, Cantrips, and Spells
+        this.spells = characterClass.getSpellBook();
+        spells.setSpellSaveDC(8 + proficiencyBonus + getAbilityScoreModifier(spells.getSpellcastingAbility()));
+        spells.setSpellAttackBonus(proficiencyBonus + getAbilityScoreModifier(spells.getSpellcastingAbility()));
 
     }
 
@@ -327,6 +330,10 @@ public class Character {
 
     public CharacterDescription getDescription() {
         return description;
+    }
+
+    public int getAbilityScoreModifier(String abilityScore) {
+        return abilityScores.get(abilityScore).getModifier();
     }
 
     

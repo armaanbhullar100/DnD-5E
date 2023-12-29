@@ -107,4 +107,12 @@ public class SpellBook {
     public ArrayList<Spell> getNinthLevelSpells() {
         return ninthLevel;
     }
+
+    public void setSpellSaveDC(int spellSaveDC) {
+        this.spellSaveDC = spellSaveDC;
+    }
+
+    public void setSpellAttackBonus(int spellAttackBonus) {
+        this.spellAttackBonus = spellAttackBonus;
+    }
 }

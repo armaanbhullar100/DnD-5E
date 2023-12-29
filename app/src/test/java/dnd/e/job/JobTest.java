@@ -17,8 +17,8 @@ public class JobTest {
         JobFactory fac = new JobFactory(scan);
         Job j = fac.createJob("barbarian");
 
-        assertEquals(2, j.getMaxRageNum());
-        assertEquals(2, j.getCurrRageNum());
+        assertEquals(2, j.getMaxRages());
+        assertEquals(2, j.getCurrRages());
         assertEquals(2, j.getRageDamage());
     }
 }

@@ -63,8 +63,8 @@ public class JobFactoryTest {
         Job j = fac.createJob("barbarian");
 
         ArrayList<String> newProficiencies = new ArrayList<>();
+        newProficiencies.add("Animal Handling");
         newProficiencies.add("Athletics");
-        newProficiencies.add("Intimidation");
 
         assertEquals(newProficiencies, j.getSkillProficiencies());
     }
@@ -78,10 +78,10 @@ public class JobFactoryTest {
         ItemFactory fac2 = new ItemFactory();
 
         HashMap<String,Item> newEquipment = new HashMap<>();
-        newEquipment.put("Greataxe", fac2.createItemWithCustomAmount("greataxe", 1));
-        newEquipment.put("Handaxe", fac2.createItemWithCustomAmount("handaxe", 1));
-        newEquipment.put("Explorer's Pack", fac2.createItemWithCustomAmount("explorer's pack", 1));
-        newEquipment.put("Javelin", fac2.createItemWithCustomAmount("javelin", 4));
+        newEquipment.put("Greataxe", fac2.createItem("greataxe"));
+        newEquipment.put("Handaxe", fac2.createItem("handaxe"));
+        newEquipment.put("Explorer's Pack", fac2.createItem("explorer's pack"));
+        newEquipment.put("Javelin", fac2.createItem("javelin"));
 
         assertTrue(newEquipment.equals(j.getEquipment()));
     }
@@ -97,39 +97,53 @@ public class JobFactoryTest {
         features.add(new Feature("Fast Movement", "Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor.", "Barbarian", 5));
 
         assertTrue(features.get(0).equals(j.getFeatures().get(1)));
-        assertTrue(features.get(1).equals(j.getFeatures().get(7)));
+        assertTrue(features.get(1).equals(j.getFeatures().get(8)));
     }
 
     // Test subclasses later
 
     @Test
-    public void otherJobValuesTest() throws IOException {
+    public void extraMechanicsTest() throws IOException {
         Scanner scan = new Scanner(System.in);
         JobFactory fac = new JobFactory(scan);
         Job j = fac.createJob("barbarian");
 
-        ArrayList<Integer> newRageDam = new ArrayList<>();
-        newRageDam.add(2);
-        newRageDam.add(2);
-        newRageDam.add(2);
-        newRageDam.add(2);
-        newRageDam.add(2);
-        newRageDam.add(2);
-        newRageDam.add(2);
-        newRageDam.add(2);
-        newRageDam.add(3);
-        newRageDam.add(3);
-        newRageDam.add(3);
-        newRageDam.add(3);
-        newRageDam.add(3);
-        newRageDam.add(3);
-        newRageDam.add(3);
-        newRageDam.add(4);
-        newRageDam.add(4);
-        newRageDam.add(4);
-        newRageDam.add(4);
-        newRageDam.add(4);
+        assertEquals(2, j.getRageDamage());
+        assertEquals(2, j.getMaxRages());
+        assertEquals(2, j.getCurrRages());
+    }
 
-        assertEquals(newRageDam, j.getOtherJobValues().get("rage damage"));
+    @Test
+    public void noMagicTest() throws IOException {
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac = new JobFactory(scan);
+        Job j = fac.createJob("barbarian");
+
+        assertEquals(null, j.getSpellSlots());
+        assertEquals(null, j.getSpellBook());
+    }
+
+    @Test
+    public void magicTest() throws IOException {
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac = new JobFactory(scan);
+        Job j = fac.createJob("bard");
+
+        // Test Spell Slots at level 1
+        assertEquals(2, j.getFirstLevelSpellSlots());
+        assertEquals(0, j.getSecondLevelSpellSlots());
+        assertEquals(0, j.getThirdLevelSpellSlots());
+        assertEquals(0, j.getFourthLevelSpellSlots());
+        assertEquals(0, j.getFifthLevelSpellSlots());
+        assertEquals(0, j.getSixthLevelSpellSlots());
+        assertEquals(0, j.getSeventhLevelSpellSlots());
+        assertEquals(0, j.getEighthLevelSpellSlots());
+        assertEquals(0, j.getNinthLevelSpellSlots());
+
+        // Test Spell Book at level 1
+        assertEquals("Bard", j.getSpellBook().getSpellcastingClass());
+        assertEquals("Charisma", j.getSpellBook().getSpellcastingAbility());
+        assertEquals(true, j.getSpellBook().getRitualCasting());
+        assertEquals(4, j.getSpellBook().getSpellsKnownAmount(1));
     }
 }

@@ -1,17 +1,21 @@
 package magic;
 
-public class SpellSlots {
-    private int firstLevel;
-    private int secondLevel;
-    private int thirdLevel;
-    private int fourthLevel;
-    private int fifthLevel;
-    private int sixthLevel;
-    private int seventhLevel;
-    private int eightLevel;
-    private int ninthLevel;
+import java.util.ArrayList;
 
-    public SpellSlots(int firstLevel, int secondLevel, int thirdLevel, int fourthLevel, int fifthLevel, int sixthLevel, int seventhLevel, int eightLevel, int ninthLevel) {
+public class SpellSlots {
+    private ArrayList<Integer> cantrips;
+    private ArrayList<Integer> firstLevel;
+    private ArrayList<Integer> secondLevel;
+    private ArrayList<Integer> thirdLevel;
+    private ArrayList<Integer> fourthLevel;
+    private ArrayList<Integer> fifthLevel;
+    private ArrayList<Integer> sixthLevel;
+    private ArrayList<Integer> seventhLevel;
+    private ArrayList<Integer> eighthLevel;
+    private ArrayList<Integer> ninthLevel;
+
+    public SpellSlots(ArrayList<Integer> cantrips, ArrayList<Integer> firstLevel, ArrayList<Integer> secondLevel, ArrayList<Integer> thirdLevel, ArrayList<Integer> fourthLevel, ArrayList<Integer> fifthLevel, ArrayList<Integer> sixthLevel, ArrayList<Integer> seventhLevel, ArrayList<Integer> eighthLevel, ArrayList<Integer> ninthLevel) {
+        this.cantrips = cantrips;
         this.firstLevel = firstLevel;
         this.secondLevel = secondLevel;
         this.thirdLevel = thirdLevel;
@@ -19,44 +23,48 @@ public class SpellSlots {
         this.fifthLevel = fifthLevel;
         this.sixthLevel = sixthLevel;
         this.seventhLevel = seventhLevel;
-        this.eightLevel = eightLevel;
+        this.eighthLevel = eighthLevel;
         this.ninthLevel = ninthLevel;
     }
 
-    public int getFirstLevel() {
-        return firstLevel;
+    public int getNumCantrips(int level) {
+        return cantrips.get(level);
     }
 
-    public int getSecondLevel() {
-        return secondLevel;
+    public int getFirstLevelSpellSlots(int level) {
+        return firstLevel.get(level);
     }
 
-    public int getThirdLevel() {
-        return thirdLevel;
+    public int getSecondLevelSpellSlots(int level) {
+        return secondLevel.get(level);
     }
 
-    public int getFourthLevel() {
-        return fourthLevel;
+    public int getThirdLevelSpellSlots(int level) {
+        return thirdLevel.get(level);
     }
 
-    public int getFifthLevel() {
-        return fifthLevel;
+    public int getFourthLevelSpellSlots(int level) {
+        return fourthLevel.get(level);
     }
 
-    public int getSixthLevel() {
-        return sixthLevel;
+    public int getFifthLevelSpellSlots(int level) {
+        return fifthLevel.get(level);
     }
 
-    public int getSeventhLevel() {
-        return seventhLevel;
+    public int getSixthLevelSpellSlots(int level) {
+        return sixthLevel.get(level);
     }
 
-    public int getEightLevel() {
-        return eightLevel;
+    public int getSeventhLevelSpellSlots(int level) {
+        return seventhLevel.get(level);
     }
 
-    public int getNinthLevel() {
-        return ninthLevel;
+    public int getEighthLevelSpellSlots(int level) {
+        return eighthLevel.get(level);
+    }
+
+    public int getNinthLevelSpellSlots(int level) {
+        return ninthLevel.get(level);
     }
     
 }

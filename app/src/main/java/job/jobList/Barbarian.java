@@ -5,30 +5,34 @@ import java.util.HashMap;
 
 import character.Feature;
 import item.Item;
+import job.ExtraMechanics;
 import job.Job;
 import job.jobList.subclasses.Subclass;
+import magic.SpellSlots;
+import magic.SpellBook;
 
 public class Barbarian extends Job {
 
     public Barbarian(String name, int hitDice, ArrayList<String> itemProficiencies,
             ArrayList<String> savingThrowProficiencies, ArrayList<String> skillProficiencies,
-            HashMap<String,Item> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String,ArrayList<Integer>> otherJobValues) {
-        super(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, otherJobValues);
+            HashMap<String,Item> equipment, ArrayList<Feature> features, Subclass subclass, 
+            ExtraMechanics extraMechanics, SpellSlots spellSlots, SpellBook spellBook) {
+        super(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
     }
 
     @Override
     public int getRageDamage() {
-        return getOtherJobValues().get("rage damage").get(getLevel()-1);
+        return getExtraMechanics().getRageDamage(getLevel()-1);
     }
 
     @Override
-    public int getCurrRageNum() {
-        return getOtherJobValues().get("current rages").get(0);
+    public int getCurrRages() {
+        return getExtraMechanics().getCurrRages();
     }
 
     @Override
-    public int getMaxRageNum() {
-        return getOtherJobValues().get("number of rages").get(getLevel()-1);
+    public int getMaxRages() {
+        return getExtraMechanics().getMaxRages(getLevel()-1);
     }
     
 }

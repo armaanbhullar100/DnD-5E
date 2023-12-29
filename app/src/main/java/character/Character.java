@@ -196,6 +196,8 @@ public class Character {
             }
         }
 
+        // Get magic from character class 
+        // Assign Spell Save DC, Spell Attack Bonus, Spellcasting Ability, Ritual Casting, Cantrips, and Spells
 
     }
 

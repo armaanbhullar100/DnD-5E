@@ -925,7 +925,7 @@
         "amount": 1
     },
     "clothes, common": {
-        "name": "Common clothes",
+        "name": "Clothes, Common",
         "cost": 50,
         "weight": 3,
         "itemType": "Adventuring Gear",
@@ -933,7 +933,7 @@
         "amount": 1
     },
     "clothes, costume": {
-        "name": "Costume",
+        "name": "Clothes, Costume",
         "cost": 500,
         "weight": 4,
         "itemType": "Adventuring Gear",
@@ -941,7 +941,7 @@
         "amount": 1
     },
     "clothes, fine": {
-        "name": "Fine Clothes",
+        "name": "Clothes, Fine",
         "cost": 1500,
         "weight": 6,
         "itemType": "Adventuring Gear",
@@ -949,7 +949,7 @@
         "amount": 1
     },
     "clothes, traveler's": {
-        "name": "Traveler's clothes",
+        "name": "Clothes, Traveler's",
         "cost": 200,
         "weight": 4,
         "itemType": "Adventuring Gear",

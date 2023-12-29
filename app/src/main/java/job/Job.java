@@ -22,12 +22,13 @@ public class Job implements BarbarianInterface {
     private HashMap<String,Item> equipment = new HashMap<>();
     private ArrayList<Feature> features = new ArrayList<>();
     private Subclass subclass;
-    private HashMap<String, ArrayList<Integer>> otherJobValues = new HashMap<>();
-    private SpellBook spellBook;
+    private ExtraMechanics extraMechanics;
     private SpellSlots spellSlots;
+    private SpellBook spellBook;
 
     public Job(String name, int hitDice, ArrayList<String> itemProficiencies, ArrayList<String> savingThrowProficiencies, 
-            ArrayList<String> skillProficiencies, HashMap<String,Item> equipment, ArrayList<Feature> features, Subclass subclass, HashMap<String, ArrayList<Integer>> otherJobValues) {
+            ArrayList<String> skillProficiencies, HashMap<String,Item> equipment, ArrayList<Feature> features, Subclass subclass, 
+            ExtraMechanics extraMechanics, SpellSlots spellSlots, SpellBook spellBook) {
         this.name = name;
         this.level = 1;
         this.hitDice = hitDice;
@@ -37,7 +38,9 @@ public class Job implements BarbarianInterface {
         this.equipment = equipment;
         this.features = features;
         this.subclass = subclass;
-        this.otherJobValues = otherJobValues;
+        this.extraMechanics = extraMechanics;
+        this.spellSlots = spellSlots;
+        this.spellBook = spellBook;
     }
 
     @Override
@@ -96,8 +99,8 @@ public class Job implements BarbarianInterface {
         return proficiencyBonus;
     }
 
-    public HashMap<String, ArrayList<Integer>> getOtherJobValues() {
-        return otherJobValues;
+    public ExtraMechanics getExtraMechanics() {
+        return extraMechanics;
     }
 
     public SpellBook getSpellBook() {
@@ -108,19 +111,58 @@ public class Job implements BarbarianInterface {
         return spellSlots;
     }
 
-    @Override
-    public int getRageDamage() {
-        return 0;
-    }
-
-    @Override
-    public int getMaxRageNum() {
-        return 0;
-    }
-
-    @Override
-    public int getCurrRageNum() {
-        return 0;
+    public int getFirstLevelSpellSlots() {
+        return spellSlots.getFirstLevelSpellSlots(getLevel()-1);
     }
     
+    public int getSecondLevelSpellSlots() {
+        return spellSlots.getSecondLevelSpellSlots(getLevel()-1);
+    }
+    
+    public int getThirdLevelSpellSlots() {
+        return spellSlots.getThirdLevelSpellSlots(getLevel()-1);
+    }
+    
+    public int getFourthLevelSpellSlots() {
+        return spellSlots.getFourthLevelSpellSlots(getLevel()-1);
+    }
+    
+    public int getFifthLevelSpellSlots() {
+        return spellSlots.getFifthLevelSpellSlots(getLevel()-1);
+    }
+
+    public int getSixthLevelSpellSlots() {
+        return spellSlots.getSixthLevelSpellSlots(getLevel()-1);
+    }
+
+    public int getSeventhLevelSpellSlots() {
+        return spellSlots.getSeventhLevelSpellSlots(getLevel()-1);
+    }
+
+    public int getEighthLevelSpellSlots() {
+        return spellSlots.getEighthLevelSpellSlots(getLevel()-1);
+    }
+
+    public int getNinthLevelSpellSlots() {
+        return spellSlots.getNinthLevelSpellSlots(getLevel()-1);
+    }
+
+    @Override
+    public int getRageDamage() {
+        return -1;
+    }
+    
+    @Override
+    public int getMaxRages() {
+        return -1;
+    }
+    
+    @Override
+    public int getCurrRages() {
+        return -1;
+    }
+    
+    public void setLevel(int level) {
+        this.level = level;
+    }
 }

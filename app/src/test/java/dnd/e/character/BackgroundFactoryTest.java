@@ -76,7 +76,7 @@ public class BackgroundFactoryTest {
         newEquipment.add(fac2.createItemWithCustomAmount("prayer book", 1));
         newEquipment.add(fac2.createItemWithCustomAmount("stick of incense", 5));
         newEquipment.add(fac2.createItemWithCustomAmount("vestments", 1));
-        newEquipment.add(fac2.createItemWithCustomAmount("common clothes", 1));
+        newEquipment.add(fac2.createItemWithCustomAmount("clothes, common", 1));
         newEquipment.add(fac2.createItemWithCustomAmount("currency pouch", 15));
         
         Collections.sort(backgroundEquipment, new ItemComparator());

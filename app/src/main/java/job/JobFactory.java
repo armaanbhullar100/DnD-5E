@@ -14,6 +14,8 @@ import item.Item;
 import item.ItemFactory;
 import job.jobList.*;
 import job.jobList.subclasses.Subclass;
+import magic.SpellBook;
+import magic.SpellSlots;
 import util.FileLoader;
 
 public class JobFactory {
@@ -57,7 +59,13 @@ public class JobFactory {
             savingThrowProficiencies.add(jsonSavingThrowProficiencies.getString(i));
         }
 
+        // Get skill proficiencies from json array (CURRENTLY GETS FIRST N SKILLS FROM LIST)
+        JSONArray jsonSkillProficiencies = newJob.getJSONObject("skill proficiencies").getJSONArray("list of choices");
+        int numSkillProficiencies = newJob.getJSONObject("skill proficiencies").getInt("number of choices");
         ArrayList<String> skillProficiencies = new ArrayList<>();
+        for (int i = 0; i < numSkillProficiencies; i++) {
+            skillProficiencies.add(jsonSkillProficiencies.getString(i));
+        }
         
         // Get list of choices from jsonArray
         // JSONObject skillInfo = newJob.getJSONObject("skill proficiencies");
@@ -80,11 +88,18 @@ public class JobFactory {
         //     skillChoices.remove(choice);
         // }
         
-        // Uncomment the lines below for test purposes
-        skillProficiencies.add("Athletics");
-        skillProficiencies.add("Intimidation");
-
+        // Get list of equipment from json object, chooses first item from each choice (CAN'T HANDLE MULTIPLE ITEMS IN A SINGLE STRING)
+        JSONObject jsonEquipment = newJob.getJSONObject("equipment");
         HashMap<String,Item> equipment = new HashMap<>();
+        Iterator<String> equipmentKeys = jsonEquipment.keys();
+        while (equipmentKeys.hasNext()) {
+            String currKey = equipmentKeys.next();
+            JSONArray currEquipmentChoice = jsonEquipment.getJSONArray(currKey);
+            String itemString = currEquipmentChoice.getString(0);
+            String itemName = itemString.split(" - ")[0];
+            Item item = fac.createItem(itemName);
+            equipment.put(item.getName(), item);
+        }
         
         // Add section to let user choose equipment from options instead of getting prechosen items
         // JSONObject equipmentInfo = newJob.getJSONObject("equipment");
@@ -127,10 +142,10 @@ public class JobFactory {
         // }
 
         // Uncomment the lines below for test purposes
-        equipment.put("Greataxe", fac.createItemWithCustomAmount("greataxe", 1));
-        equipment.put("Handaxe", fac.createItemWithCustomAmount("handaxe", 1));
-        equipment.put("Explorer's Pack", fac.createItemWithCustomAmount("explorer's pack", 1));
-        equipment.put("Javelin", fac.createItemWithCustomAmount("javelin", 4));
+        // equipment.put("Greataxe", fac.createItemWithCustomAmount("greataxe", 1));
+        // equipment.put("Handaxe", fac.createItemWithCustomAmount("handaxe", 1));
+        // equipment.put("Explorer's Pack", fac.createItemWithCustomAmount("explorer's pack", 1));
+        // equipment.put("Javelin", fac.createItemWithCustomAmount("javelin", 4));
 
         // Get and create list of features from json array
         JSONArray jsonArrayFeatures = newJob.getJSONArray("features");
@@ -149,18 +164,132 @@ public class JobFactory {
         }
 
         // Get extra mechanics of each job from json object and place into hashmap
-        JSONObject extraMechanics = newJob.getJSONObject("extra mechanics");
-        Iterator<String> objectKeys = extraMechanics.keys();
-        HashMap<String,ArrayList<Integer>> otherJobValues = new HashMap<>();
-        while (objectKeys.hasNext()) {
-            String currKey = objectKeys.next();
-            otherJobValues.put(currKey, jsonArrayToArrayList(extraMechanics.get(currKey)));
+        JSONObject jsonExtraMechanics = newJob.getJSONObject("extra mechanics");
+        Iterator<String> extraMechanicKeys = jsonExtraMechanics.keys();
+        ExtraMechanics extraMechanics = new ExtraMechanics();
+        while (extraMechanicKeys.hasNext()) {
+            String currKey = extraMechanicKeys.next();
+            switch (currKey) {
+                case "number of rages":
+                    extraMechanics.setMaxRages(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
+                case "rage damage":
+                    extraMechanics.setRageDamage(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
+                case "current rages":
+                    extraMechanics.setCurrRages(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)).get(0));
+                    break;
+                default:
+                    break;
+            }
         }
 
-        if (name.equals("Barbarian")) {
-            return new Barbarian(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, otherJobValues);
+        // Get magic from json object
+        JSONObject magic = newJob.getJSONObject("magic");
+
+        boolean hasMagic = magic.getBoolean("has magic");
+        SpellSlots spellSlots;
+        SpellBook spellBook;
+
+        if (!hasMagic) {
+            spellSlots = null;
+            spellBook = null;
         } else {
-            return null;
+            JSONObject jsonSpellSlots = magic.getJSONObject("spell slots");
+            Iterator<String> spellSlotKeys = jsonSpellSlots.keys();
+            ArrayList<Integer> cantrips = null;
+            ArrayList<Integer> firstLevel = null;
+            ArrayList<Integer> secondLevel = null;
+            ArrayList<Integer> thirdLevel = null;
+            ArrayList<Integer> fourthLevel = null;
+            ArrayList<Integer> fifthLevel = null;
+            ArrayList<Integer> sixLevel = null;
+            ArrayList<Integer> seventhLevel = null;
+            ArrayList<Integer> eighthLevel = null;
+            ArrayList<Integer> ninthLevel = null;
+            
+            // Get Spell Slots
+            while(spellSlotKeys.hasNext()) {
+                String currKey = spellSlotKeys.next();
+                switch (currKey) {
+                    case "cantrips":
+                        cantrips = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    case "first level":
+                        firstLevel = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    case "second level":
+                        secondLevel = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    case "third level":
+                        thirdLevel = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    case "fourth level":
+                        fourthLevel = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    case "fifth level":
+                        fifthLevel = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    case "sixth level":
+                        sixLevel = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    case "seventh level":
+                        seventhLevel = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    case "eighth level":
+                        eighthLevel = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    case "ninth level":
+                        ninthLevel = jsonArrayToArrayList(jsonSpellSlots.get(currKey));
+                        break;
+                    default:
+                        break;
+                }
+            }
+            spellSlots = new SpellSlots(cantrips, firstLevel, secondLevel, thirdLevel, fourthLevel, fifthLevel, sixLevel, seventhLevel, eighthLevel, ninthLevel);
+
+            String spellsKnownType = magic.getString("spells known type");
+            ArrayList<Integer> spellsKnownAmount = new ArrayList<>();
+            String spellCastingAbility = magic.getString("spellcasting ability");
+            boolean ritualCasting = magic.getBoolean("ritual casting");
+
+            // Get Number of Spells Known if possible
+            if (spellsKnownType.equals("list")) {
+                spellsKnownAmount = jsonArrayToArrayList(magic.getJSONArray("spells known amount"));
+            } else {
+                spellsKnownAmount.add(-1);
+            }
+
+            spellBook = new SpellBook(name, spellCastingAbility, -1, -1, ritualCasting, spellsKnownAmount, null, null, null, null, null, null, null, null, null, null);
+        }
+
+        switch (name) {
+            case "Barbarian":
+                return new Barbarian(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Bard":
+                return new Bard(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Cleric":
+                return new Cleric(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Druid":
+                return new Druid(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Fighter":
+                return new Fighter(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Monk":
+                return new Monk(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Paladin":
+                return new Paladin(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Ranger":
+                return new Ranger(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Rogue":
+                return new Rogue(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Sorcerer":
+                return new Sorcerer(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Warlock":
+                return new Warlock(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            case "Wizard":
+                return new Wizard(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
+            default:
+                return null;
         }
     }
 

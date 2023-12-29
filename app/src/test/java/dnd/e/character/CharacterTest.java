@@ -128,9 +128,9 @@ public class CharacterTest {
         Character c = new Character("John", "James", jfac.createJob("barbarian"), rfac.createRace("dwarf"), bfac.createBackground("acolyte"), "Lawful Good", abilityScores);
 
         assertEquals(new Skill(false, 2), c.getSkills().get("Acrobatics"));
-        assertEquals(new Skill(false, 4), c.getSkills().get("Animal Handling"));
+        assertEquals(new Skill(true, 4), c.getSkills().get("Animal Handling"));
         assertEquals(new Skill(false, 3), c.getSkills().get("Arcana"));
-        assertEquals(new Skill(true, 5), c.getSkills().get("Intimidation"));
+        assertEquals(new Skill(false, 5), c.getSkills().get("Intimidation"));
         assertEquals(new Skill(true, 1), c.getSkills().get("Athletics"));
         assertEquals(new Skill(true, 4), c.getSkills().get("Insight"));
     }
@@ -210,7 +210,7 @@ public class CharacterTest {
         newEquipment.put("prayer book", ifac.createItem("prayer book"));
         newEquipment.put("stick of incense", ifac.createItemWithCustomAmount("stick of incense", 5));
         newEquipment.put("vestments", ifac.createItem("vestments"));
-        newEquipment.put("common clothes", ifac.createItem("common clothes"));
+        newEquipment.put("Clothes, Common", ifac.createItem("clothes, common"));
         newEquipment.put("Currency Pouch", ifac.createItemWithCustomAmount("currency pouch", 15));
         newEquipment.put("Greataxe", ifac.createItem("greataxe"));
         newEquipment.put("Handaxe", ifac.createItemWithCustomAmount("handaxe", 2));

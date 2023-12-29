@@ -1270,14 +1270,7 @@
             ]
         },
         "extra mechanics": {
-            "fighting style": [
-                "Archery",
-                "Defense",
-                "Dueling",
-                "Great Weapon Fighting",
-                "Protection",
-                "Two-Weapon Fighting"
-            ]
+
         },
         "magic": {
             "has magic": false
@@ -2454,19 +2447,7 @@
             ]
         },
         "extra mechanics": {
-            "sorcery points": [0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
-            "metamagic": [
-                "Careful Spell",
-                "Distant Spell",
-                "Empowered Spell",
-                "Extended Spell",
-                "Heightened Spell",
-                "Quickened Spell",
-                "Seeking Spell",
-                "Subtle Spell",
-                "Transmuted Spell",
-                "Twinned Spell"
-            ]
+            "sorcery points": [0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
         },
         "magic": {
             "has magic": true,
@@ -2634,44 +2615,7 @@
         },
         "extra mechanics": {
             "spell slots": [1,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4],
-            "slot level": [1,1,2,2,3,3,4,4,5,5,5,5,5,5,5,5,5,5,5,5],
-            "eldritch invocations": [
-                "Agonizing Blast",
-                "Armor of Shadows",
-                "Beast Speech",
-                "Beguiling Influence",
-                "Bewitching Whispers",
-                "Book of Ancient Secrets",
-                "Chains of Carceri",
-                "Devil's Sight",
-                "Dreadful Word",
-                "Eldritch Sight",
-                "Eldritch Spear",
-                "Eyes of the Rune Keeper",
-                "Fiendish Vigor",
-                "Gaze of Two Minds",
-                "Lifedrinker",
-                "Mask of Many Faces",
-                "Master of Myriad Forms",
-                "Minions of Chaos",
-                "Mire the Mind",
-                "Misty Visions",
-                "One with Shadows",
-                "Otherworldly Leap",
-                "Repelling Blast",
-                "Sculptor of Flesh",
-                "Sign of Ill Omen",
-                "Thief of Five Fates",
-                "Thirsting Blade",
-                "Visions of Distant Realms",
-                "Voice of the Chain Master",
-                "Whispers of the Grave"
-            ],
-            "pact boons": [
-                "Pact of the Blade",
-                "Pact of the Chain",
-                "Pact of the Tome"
-            ]
+            "slot level": [1,1,2,2,3,3,4,4,5,5,5,5,5,5,5,5,5,5,5,5]
         },
         "magic": {
             "has magic": true,

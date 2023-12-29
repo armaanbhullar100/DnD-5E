@@ -179,6 +179,18 @@ public class JobFactory {
                 case "current rages":
                     extraMechanics.setCurrRages(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)).get(0));
                     break;
+                case "martial arts dice":
+                    extraMechanics.setMartialArtsDice(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
+                case "ki points":
+                    extraMechanics.setMaxKiPoints(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
+                case "current ki points":
+                    extraMechanics.setCurrKiPoints(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)).get(0));
+                    break;
+                case "unarmored movement":
+                    extraMechanics.setUnarmoredMovement(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
                 default:
                     break;
             }

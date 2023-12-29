@@ -18,5 +18,25 @@ public class Monk extends Job {
             ExtraMechanics extraMechanics, SpellSlots spellSlots, SpellBook spellBook) {
         super(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
     }
+
+    @Override
+    public int getMartialArtsDice() {
+        return getExtraMechanics().getMartialArtsDice(getLevel()-1);
+    }
+
+    @Override
+    public int getMaxKiPoints() {
+        return getExtraMechanics().getMaxKiPoints(getLevel()-1);
+    }
+
+    @Override
+    public int getCurrKiPoints() {
+        return getExtraMechanics().getCurrKiPoints();
+    }
+
+    @Override
+    public int getUnarmoredMovement() {
+        return getExtraMechanics().getUnarmoredMovement(getLevel()-1);
+    }
     
 }

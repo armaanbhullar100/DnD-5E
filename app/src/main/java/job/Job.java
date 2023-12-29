@@ -7,10 +7,11 @@ import character.*;
 import item.*;
 import job.jobList.subclasses.Subclass;
 import job.jobMethodsInterface.BarbarianInterface;
+import job.jobMethodsInterface.MonkInterface;
 import magic.SpellBook;
 import magic.SpellSlots;
 
-public class Job implements BarbarianInterface {
+public class Job implements BarbarianInterface, MonkInterface {
     private String name;
     private int level;
     private int proficiencyBonus;
@@ -159,6 +160,26 @@ public class Job implements BarbarianInterface {
     
     @Override
     public int getCurrRages() {
+        return -1;
+    }
+
+    @Override
+    public int getMartialArtsDice() {
+        return -1;
+    }
+
+    @Override
+    public int getMaxKiPoints() {
+        return -1;
+    }
+
+    @Override
+    public int getCurrKiPoints() {
+        return -1;
+    }
+
+    @Override
+    public int getUnarmoredMovement() {
         return -1;
     }
     

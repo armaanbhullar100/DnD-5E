@@ -21,4 +21,16 @@ public class JobTest {
         assertEquals(2, j.getCurrRages());
         assertEquals(2, j.getRageDamage());
     }
+
+    @Test
+    public void monkTest() throws IOException {
+        Scanner scan = new Scanner(System.in);
+        JobFactory fac = new JobFactory(scan);
+        Job j = fac.createJob("monk");
+
+        assertEquals(4, j.getMartialArtsDice());
+        assertEquals(0, j.getMaxKiPoints());
+        assertEquals(0, j.getCurrKiPoints());
+        assertEquals(0, j.getUnarmoredMovement());
+    }
 }

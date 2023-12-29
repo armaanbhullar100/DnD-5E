@@ -6,14 +6,12 @@ public class ExtraMechanics {
     private ArrayList<Integer> maxRages;
     private ArrayList<Integer> rageDamage;
     private int currRages;
+    private ArrayList<Integer> martialArtsDice;
+    private ArrayList<Integer> maxKiPoints;
+    private int currKiPoints;
+    private ArrayList<Integer> unarmoredMovement;
 
     public ExtraMechanics() {}
-
-    public ExtraMechanics(ArrayList<Integer> maxRages, ArrayList<Integer> rageDamage) {
-        this.maxRages = maxRages;
-        this.rageDamage = rageDamage;
-        this.currRages = 2;
-    }
 
     public int getMaxRages(int level) {
         return maxRages.get(level);
@@ -27,6 +25,22 @@ public class ExtraMechanics {
         return currRages;
     }
 
+    public int getMartialArtsDice(int level) {
+        return martialArtsDice.get(level);
+    }
+
+    public int getMaxKiPoints(int level) {
+        return maxKiPoints.get(level);
+    }
+
+    public int getCurrKiPoints() {
+        return currKiPoints;
+    }
+
+    public int getUnarmoredMovement(int level) {
+        return unarmoredMovement.get(level);
+    }
+
     public void setMaxRages(ArrayList<Integer> maxRages) {
         this.maxRages = maxRages;
     }
@@ -37,5 +51,21 @@ public class ExtraMechanics {
 
     public void setCurrRages(int currRages) {
         this.currRages = currRages;
+    }
+
+    public void setMartialArtsDice(ArrayList<Integer> martialArtsDice) {
+        this.martialArtsDice = martialArtsDice;
+    }
+
+    public void setMaxKiPoints(ArrayList<Integer> maxKiPoints) {
+        this.maxKiPoints = maxKiPoints;
+    }
+
+    public void setCurrKiPoints(int currKiPoints) {
+        this.currKiPoints = currKiPoints;
+    }
+
+    public void setUnarmoredMovement(ArrayList<Integer> unarmoredMovement) {
+        this.unarmoredMovement = unarmoredMovement;
     }
 }

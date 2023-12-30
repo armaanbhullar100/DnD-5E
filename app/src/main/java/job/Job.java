@@ -8,10 +8,14 @@ import item.*;
 import job.jobList.subclasses.Subclass;
 import job.jobMethodsInterface.BarbarianInterface;
 import job.jobMethodsInterface.MonkInterface;
+import job.jobMethodsInterface.RogueInterface;
+import job.jobMethodsInterface.SorcererInterface;
+import job.jobMethodsInterface.WarlockInterface;
+import job.jobMethodsInterface.WizardInterface;
 import magic.SpellBook;
 import magic.SpellSlots;
 
-public class Job implements BarbarianInterface, MonkInterface {
+public class Job implements BarbarianInterface, MonkInterface, RogueInterface, SorcererInterface, WarlockInterface, WizardInterface {
     private String name;
     private int level;
     private int proficiencyBonus;
@@ -180,6 +184,36 @@ public class Job implements BarbarianInterface, MonkInterface {
 
     @Override
     public int getUnarmoredMovement() {
+        return -1;
+    }
+
+    @Override
+    public int getSneakAttackDice() {
+        return -1;
+    }
+
+    @Override
+    public int getMaxSorceryPoints() {
+        return -1;
+    }
+
+    @Override
+    public int getCurrSorceryPoints() {
+        return -1;
+    }
+
+    @Override
+    public int getWarlockSpellSlotLevel() {
+        return -1;
+    }
+
+    @Override
+    public int getWarlockSpellSlotNum() {
+        return -1;
+    }
+
+    @Override
+    public int getWizardSpellsKnown() {
         return -1;
     }
     

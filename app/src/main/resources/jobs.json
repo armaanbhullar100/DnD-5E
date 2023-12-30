@@ -2448,7 +2448,8 @@
             ]
         },
         "extra mechanics": {
-            "sorcery points": [0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+            "max sorcery points": [0,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+            "current sorcery points": [0]
         },
         "magic": {
             "has magic": true,
@@ -2615,8 +2616,8 @@
             ]
         },
         "extra mechanics": {
-            "spell slots": [1,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4],
-            "slot level": [1,1,2,2,3,3,4,4,5,5,5,5,5,5,5,5,5,5,5,5]
+            "warlock spell slot num": [1,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4],
+            "warlock spell slot level": [1,1,2,2,3,3,4,4,5,5,5,5,5,5,5,5,5,5,5,5]
         },
         "magic": {
             "has magic": true,
@@ -2850,10 +2851,7 @@
             ]
         },
         "extra mechanics": {
-            "spellbook": {
-                "starting num spells": 6,
-                "spells per level": 2
-            }
+            "wizard spells known": [6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44]
         },
         "magic": {
             "has magic": true,
@@ -2896,8 +2894,8 @@
                 "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
             },
             {
-                "level": "Spell Mastery",
-                "name": 18,
+                "level": 18,
+                "name": "Spell Mastery",
                 "description": "At 18th level, you have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. If you want to cast either spell at a higher level, you must expend a spell slot as normal. By spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels."
             },
             {

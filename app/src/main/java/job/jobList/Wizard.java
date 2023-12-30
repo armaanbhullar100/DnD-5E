@@ -18,5 +18,10 @@ public class Wizard extends Job {
             ExtraMechanics extraMechanics, SpellSlots spellSlots, SpellBook spellBook) {
         super(name, hitDice, itemProficiencies, savingThrowProficiencies, skillProficiencies, equipment, features, subclass, extraMechanics, spellSlots, spellBook);
     }
+
+    @Override
+    public int getWizardSpellsKnown() {
+        return getExtraMechanics().getWizardSpellsKnown(getLevel()-1);
+    }
     
 }

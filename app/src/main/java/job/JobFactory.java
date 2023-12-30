@@ -191,6 +191,24 @@ public class JobFactory {
                 case "unarmored movement":
                     extraMechanics.setUnarmoredMovement(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
                     break;
+                case "sneak attack dice":
+                    extraMechanics.setSneakAttackDice(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
+                case "max sorcery points":
+                    extraMechanics.setMaxSorceryPoints(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
+                case "current sorcery points":
+                    extraMechanics.setCurrSorceryPoints(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)).get(0));
+                    break;
+                case "warlock spell slot num":
+                    extraMechanics.setWarlockSpellSlotNum(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
+                case "warlock spell slot level":
+                    extraMechanics.setWarlockSpellSlotLevel(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
+                case "wizard spells known":
+                    extraMechanics.setWizardSpellsKnown(jsonArrayToArrayList(jsonExtraMechanics.get(currKey)));
+                    break;
                 default:
                     break;
             }

@@ -62,7 +62,7 @@ public class SpellBook {
 
     public int getSpellsKnownAmount(int level) {
         if (spellsKnownAmount.size() > 1) {
-            return spellsKnownAmount.get(level);
+            return spellsKnownAmount.get(level-1);
         } else {
             return spellsKnownAmount.get(0);
         }

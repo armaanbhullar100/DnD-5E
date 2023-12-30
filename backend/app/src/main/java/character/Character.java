@@ -70,7 +70,7 @@ public class Character {
         // Assign saving throw values
         savingThrows.put("Strength", new SavingThrow(false, getAbilityScoreModifier("Strength")));
         savingThrows.put("Dexerity", new SavingThrow(false, getAbilityScoreModifier("Dexerity")));
-        savingThrows.put("Constitution", new SavingThrow(false, getAbilityScoreModifier("Consitution")));
+        savingThrows.put("Constitution", new SavingThrow(false, getAbilityScoreModifier("Constitution")));
         savingThrows.put("Intelligence", new SavingThrow(false, getAbilityScoreModifier("Intelligence")));
         savingThrows.put("Wisdom", new SavingThrow(false, getAbilityScoreModifier("Wisdom")));
         savingThrows.put("Charisma", new SavingThrow(false, getAbilityScoreModifier("Charisma")));
@@ -199,8 +199,10 @@ public class Character {
         // Get magic from character class 
         // Assign Spell Save DC, Spell Attack Bonus, Spellcasting Ability, Ritual Casting, Cantrips, and Spells
         this.spells = characterClass.getSpellBook();
-        spells.setSpellSaveDC(8 + proficiencyBonus + getAbilityScoreModifier(spells.getSpellcastingAbility()));
-        spells.setSpellAttackBonus(proficiencyBonus + getAbilityScoreModifier(spells.getSpellcastingAbility()));
+        if (spells != null) {
+            spells.setSpellSaveDC(8 + proficiencyBonus + getAbilityScoreModifier(spells.getSpellcastingAbility()));
+            spells.setSpellAttackBonus(proficiencyBonus + getAbilityScoreModifier(spells.getSpellcastingAbility()));
+        }
 
     }
 

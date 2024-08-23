@@ -25,6 +25,12 @@ dependencies {
 
     // Use for JSON interpretation
     implementation 'org.json:json:20171018'
+
+    // Use for HTTP requests
+    implementation 'io.javalin:javalin:6.2.0'
+
+    // Basic logger
+    implementation 'org.slf4j:slf4j-simple:2.0.12'
 }
 
 application {

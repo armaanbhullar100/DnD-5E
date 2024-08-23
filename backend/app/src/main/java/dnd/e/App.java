@@ -4,20 +4,36 @@
 package dnd.e;
 
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.Map;
 
-import character.Character;
-import character.CharacterController;
+// import java.util.Scanner;
+// import character.Character;
+// import character.CharacterController;
+
+import io.javalin.Javalin;
 
 public class App {
 
     public static void main(String[] args) throws IOException {
-        Scanner scan = new Scanner(System.in);
+        // Scanner scan = new Scanner(System.in);
 
-        CharacterController cc = new CharacterController();
-        Character c = cc.createCharacter(scan);
-        System.out.println(c.getCharacterName());
+        // CharacterController cc = new CharacterController();
+        // Character c = cc.createCharacter(scan);
+        // System.out.println(c.getCharacterName());
 
-        scan.close();
+        // scan.close();
+        var app = Javalin.create(config -> {
+            config.bundledPlugins.enableCors(cors -> {
+                cors.addRule(it -> {
+                    it.anyHost();
+                });
+            });
+        }).start(8000);
+
+        app.get("/test", ctx -> ctx.json(Map.of("message", "Hello, World!")));
+
+        app.post("/character/create", ctx -> {
+            ctx.result("Character created");
+        });
     }
 }

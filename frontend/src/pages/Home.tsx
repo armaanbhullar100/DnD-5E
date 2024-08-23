@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import { makeRequest } from '../makeRequest';
 
 function Home() {
     const [name, setName] = useState('');
@@ -8,17 +7,15 @@ function Home() {
     const [race, setRace] = useState('');
 
     const handleSubmit = async () => {
-        // const response = await makeRequest('/create/character', 'POST', '', {
-        //     name,
-        //     job,
-        //     background,
-        //     race
-        // });
-        // const data = await response.json();
-        // if (data.error) {
-        //     alert(data.error);
-        // }
-        console.log("test")
+        const response = await fetch('http://localhost:8000/test', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        // console.log(response);
+        const data = await response.json();
+        console.log(data);
     }
 
     return (
@@ -44,11 +41,11 @@ function Home() {
                 <option value="background1">Background1</option>
                 <option value="background2">Background2</option>
             </select>{background}<br />
-            <label htmlFor='job-select'>Choose a job: </label>
-            <select name='jobs' id='job-select' onChange={(e) => setJob(e.target.value)}>
-                <option value="" selected disabled hidden>--Job--</option>
-                <option value="job1">job1</option>
-                <option value="job2">job2</option>
+            <label htmlFor='class-select'>Choose a class: </label>
+            <select name='classs' id='class-select' onChange={(e) => setJob(e.target.value)}>
+                <option value="" selected disabled hidden>--Class--</option>
+                <option value="class1">class1</option>
+                <option value="class2">class2</option>
             </select>{job}<br />
             <button onClick={handleSubmit}>Submit</button>
         </div>
